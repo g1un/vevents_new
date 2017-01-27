@@ -1,0 +1,49 @@
+/*style*/
+
+/*plugins*/
+@import "plugins/normalize";
+@import "plugins/slick";
+@import "plugins/jquery.formstyler";
+/*/plugins*/
+
+/*bootstrap*/
+@import "bootstrap.scss";
+/*/bootstrap*/
+
+@import 'components/fonts';
+@import 'components/variables';
+@import 'components/typography';
+@import 'components/mixins';
+@import 'components/triangle';
+@import 'components/slider';
+@import 'components/frame';
+@import 'components/general';
+@import 'components/btn';
+@import 'components/select';
+@import 'components/form';
+@import 'components/scrollbar';
+@import 'components/two-columns';
+@import 'components/messengers';
+@import 'components/social';
+@import 'components/logo-sm';
+@import 'components/close';
+@import 'components/info-block';
+
+@import 'components/up-message';
+@import 'components/intro';
+@import 'components/options';
+@import 'components/intro-slider';
+@import 'components/promo';
+@import 'components/prices-device';
+@import 'components/prices';
+@import 'components/tags';
+@import 'components/gift';
+@import 'components/reviews';
+@import 'components/menu';
+@import 'components/city';
+@import 'components/login';
+@import 'components/footer';
+@import 'components/cite';
+@import 'components/long-text';
+@import 'components/geo';
+/*/style*/

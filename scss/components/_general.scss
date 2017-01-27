@@ -1,0 +1,51 @@
+/*general*/
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  transition: margin 1s;
+
+  &.padding {
+    margin-top: 72px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    &.padding {
+      margin-top: 64px;
+    }
+  }
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.container-m {
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.container,
+.row {
+  max-width: 970px;
+}
+/*end of general*/

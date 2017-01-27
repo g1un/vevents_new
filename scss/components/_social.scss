@@ -1,0 +1,42 @@
+/*social*/
+.social {
+  @extend .clearfix;
+
+  &__title {
+    float: left;
+
+    line-height: 1.78em;
+  }
+
+  &__list {
+    float: right;
+
+    font-size: 0;
+    line-height: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+
+    margin-right: 32px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    width: 33px;
+    height: 32px;
+
+    &:hover,
+    &:focus {
+
+      path {
+        fill: $color-red-radical;
+      }
+    }
+  }
+}
+/*/social*/

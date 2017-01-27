@@ -1,0 +1,36 @@
+/*close*/
+.close {
+  padding: 0;
+
+  width: 22px;
+  height: 22px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.close-red {
+  @extend .close;
+
+  &:hover,
+  &:focus {
+
+    rect {
+      fill: $color-red-radical;
+    }
+  }
+}
+
+.close-blue {
+  @extend .close;
+
+  &:hover,
+  &:focus {
+
+    rect {
+      fill: $color-torea-bay;
+    }
+  }
+}
+/*/close*/

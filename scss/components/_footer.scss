@@ -1,0 +1,230 @@
+/*footer*/
+.footer {
+  padding: 44px 32px 75px;
+
+  background: $color-torea-bay;
+
+  .container-m {
+    width: $block-width;
+
+    margin: 0 auto;
+  }
+
+  &__menu {
+    margin-bottom: 32px;
+  }
+
+  &__messengers {
+    margin-bottom: 51px;
+  }
+
+  &__info {
+    margin-bottom: 29px;
+  }
+
+  &__schedule {
+    margin-bottom: 32px;
+  }
+
+  &__tel {
+    display: block;
+  }
+
+  &__email {
+    display: block;
+  }
+
+  &__social {
+    margin-bottom: 56px;
+  }
+
+  &__logo {
+    margin: 0 auto;
+  }
+
+  //iPad portrait
+  @media only screen and (min-width: 768px) {
+
+    .container-m {
+      width: 2 * $block-width + 33px;
+      height: 397px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    &__messengers {
+      margin-bottom: 0;
+    }
+
+    &__info {
+      margin-bottom: 94px;
+    }
+
+    &__social {
+      margin-bottom: 87px;
+    }
+  }
+
+  //iPad landscape
+  @media only screen and (min-width: 1024px) {
+
+    .container-m {
+      width: 2 * $block-width + 222px;
+    }
+
+    &__messengers {
+      margin-bottom: 0;
+    }
+
+    &__info {
+      width: $block-width;
+      align-self: flex-end;
+      margin-bottom: 93px;
+    }
+
+    &__social {
+      width: $block-width;
+      align-self: flex-end;
+      margin-bottom: 87px;
+    }
+
+    &__logo {
+      width: $block-width;
+      align-self: flex-end;
+
+      margin: 0;
+
+      svg {
+        display: block;
+        height: 53px;
+        width: 39px;
+
+        margin: 0 auto;
+      }
+    }
+  }
+
+  //Laptop >= 1280
+  @media only screen and (min-width: $width-lg) {
+
+    .container-m {
+      width: 1216px;
+      height: auto;
+
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    &__logo {
+      order: 1;
+      align-self: flex-start;
+
+      width: auto;
+
+      margin: 0 57px 0 0;
+    }
+
+    &__menu {
+      order: 2;
+
+      width: $block-width;
+
+      margin: 0 128px 0 0;
+    }
+
+    &__info {
+      order: 3;
+
+      margin: 0 128px 0 0;
+    }
+
+    &__social {
+      order: 4;
+      align-self: flex-start;
+
+      margin: 64px 0 0;
+    }
+
+    &__messengers {
+      order: 5;
+
+      padding: 32px 96px 0 96px;
+      box-sizing: border-box;
+
+      width: 100%;
+    }
+  }
+
+  //iPhone 6+ landscape
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    padding-left: 62px;
+    padding-right: 62px;
+
+    .container-m {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      height: 397px;
+    }
+
+    &__messengers {
+      margin-bottom: 0;
+    }
+
+    &__social {
+      margin-bottom: 92px;
+    }
+  }
+
+  //iPhone 6 landscape
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    padding-left: 62px;
+    padding-right: 62px;
+
+    .container-m {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      height: 397px;
+    }
+
+    &__messengers {
+      margin-bottom: 0;
+    }
+
+    &__social {
+      margin-bottom: 92px;
+    }
+  }
+
+  //iPhone 5 landscape
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    padding-left: 32px;
+    padding-right: 32px;
+
+    .container-m {
+      width: $block-width;
+      display: block;
+
+      height: auto;
+    }
+
+    &__messengers {
+      margin-bottom: 51px;
+    }
+
+    &__social {
+      margin-bottom: 56px;
+    }
+  }
+}
+/*/footer*/

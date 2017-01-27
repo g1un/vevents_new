@@ -1,0 +1,303 @@
+/*btn*/
+.btn {
+  display: block;
+
+  width: 256px;
+  height: 48px;
+  box-sizing: border-box;
+
+  padding-left: 24px;
+  padding-right: 31px;
+
+  border-radius: 100px;
+  border: solid 1px $color-torea-bay;
+  outline: none;
+
+  background: #fff;
+
+  @extend .text-xs-common;
+
+  @include placeholder(1, $color-torea-bay);
+}
+
+.btn-menu {
+  display: block;
+
+  width: 24px;
+  height: 17px;
+
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  svg {
+    width: inherit;
+    height: inherit;
+  }
+
+  //iPad landscape
+  @media only screen and (min-width: 1024px) {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    background: $color-red-radical;
+
+    svg {
+      display: block;
+      margin: 0 auto;
+
+      width: 24px;
+      height: 16px;
+    }
+
+    &.hover {
+
+      polygon {
+        animation-name: btn-menu-hover;
+        animation-fill-mode: forwards;
+        animation-duration: .1s;
+
+        &:nth-child(2) {
+          animation-delay: .033s;
+        }
+
+        &:last-child {
+          animation-delay: .066s;
+        }
+      }
+    }
+
+    &.blur {
+
+      polygon {
+        fill: $color-torea-bay;
+
+        animation-name: btn-menu-blur;
+        animation-fill-mode: forwards;
+        animation-duration: .1s;
+        animation-delay: .066s;
+
+        &:nth-child(2) {
+          animation-delay: .033s;
+        }
+
+        &:last-child {
+          animation-delay: 0s;
+        }
+      }
+    }
+
+    //btn-menu animation
+    @keyframes btn-menu-hover {
+
+      0% {
+        fill: #fff;
+      }
+
+      100% {
+        fill: $color-torea-bay;
+      }
+    }
+
+    //btn-menu animation backwards
+    @keyframes btn-menu-blur {
+
+      0% {
+        fill: $color-torea-bay;
+      }
+
+      100% {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.btn-enter {
+  display: block;
+
+  line-height: 24px;
+
+  &__blur {
+    display: inline-block;
+  }
+
+  &__hover {
+    display: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+
+    .btn-enter__blur {
+      display: none;
+
+      text-decoration: none;
+    }
+
+    .btn-enter__hover {
+      display: inline-block;
+
+      text-decoration: none;
+    }
+  }
+
+  svg {
+    vertical-align: top;
+
+    width: 25px;
+    height: 24px;
+
+    //margin-top: 2px;
+    margin-right: 14px;
+  }
+
+  //&__blur,
+  //&__hover {
+  //  display: none;
+  //}
+
+  //iPad landscape
+  //@media only screen and (min-width: 1024px) {
+  //
+  //  font-size: $fz-md;
+  //  color: $color-torea-bay;
+  //
+  //  svg {
+  //    vertical-align: top;
+  //
+  //    width: 25px;
+  //    height: 24px;
+  //
+  //    margin-top: 2px;
+  //    margin-right: 14px;
+  //  }
+  //
+  //  &__blur {
+  //    display: inline-block;
+  //  }
+  //
+  //  &__hover {
+  //    display: none;
+  //  }
+  //
+  //  &:hover {
+  //    text-decoration: underline;
+  //
+  //    .btn-enter__blur {
+  //      display: none;
+  //
+  //      text-decoration: none;
+  //    }
+  //
+  //    .btn-enter__hover {
+  //      display: inline-block;
+  //
+  //      text-decoration: none;
+  //    }
+  //  }
+  //}
+}
+
+.btn-input {
+  @extend .btn;
+}
+
+.btn-hover {
+  @extend .btn;
+  @extend .text-semibold;
+
+  border: none;
+
+  line-height: 48px;
+  color: #fff;
+  text-align: center;
+
+  background: $color-torea-bay;
+
+  &:hover,
+  &:focus {
+    background: $color-red-radical;
+  }
+
+  &--torea {
+
+    &:hover,
+    &:focus {
+      background: $color-torea-bay;
+    }
+  }
+}
+
+.btn-border {
+  @extend .btn;
+  @extend .text-semibold;
+
+  border: 1px solid #fff;
+
+  line-height: 48px;
+  color: #fff;
+  text-align: center;
+
+  background: $color-torea-bay;
+
+  &__fb {
+    display: block;
+    float: left;
+
+    margin-top: 10px;
+    margin-left: -10px;
+
+    width: 24px;
+    height: 24px;
+  }
+
+  &__vk {
+    display: block;
+    float: left;
+
+    margin-top: 14px;
+    margin-left: -10px;
+
+    width: 36px;
+    height: 20px;
+  }
+
+  &__tg {
+    display: block;
+    float: left;
+
+    margin-top: 13px;
+    margin-left: -10px;
+
+    width: 26px;
+    height: 22px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $color-red-radical;
+  }
+}
+
+.btn-border-red {
+  @extend .btn;
+  @extend .text-reg;
+
+  padding-right: 24px;
+
+  border: 1px solid $color-torea-bay;
+
+  line-height: 48px;
+  text-align: center;
+
+  background: $color-red-radical;
+
+  &--error {
+    border-color: #fff;
+  }
+}
+/*/btn*/
