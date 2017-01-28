@@ -1,4 +1,3 @@
-/*general*/
 html,
 body,
 p,
@@ -12,18 +11,13 @@ ul {
   padding: 0;
 }
 
+html,
 body {
-  transition: margin 1s;
+  font-size: 16px;
+}
 
-  &.padding {
-    margin-top: 72px;
-  }
-
-  @media only screen and (min-width: 1024px) {
-    &.padding {
-      margin-top: 64px;
-    }
-  }
+body {
+  padding: 48px 48px 0;
 }
 
 .clearfix::after {
@@ -31,21 +25,3 @@ body {
   display: table;
   clear: both;
 }
-
-.container-m {
-  position: relative;
-}
-
-.hide {
-  display: none;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.container,
-.row {
-  max-width: 970px;
-}
-/*end of general*/

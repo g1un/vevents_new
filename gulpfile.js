@@ -6,8 +6,6 @@ var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
 var inline = require('gulp-inline');
 var svgmin = require('gulp-svgmin');
-var img64 = require('gulp-img64');
-var svgstore = require('gulp-svgstore');
 var runSequence = require('run-sequence');
 var cssnano = require('gulp-cssnano');
 var concat = require('gulp-concat');
@@ -23,7 +21,7 @@ gulp.task('sass', function(){
       browsers: ['> 0%']
     })
   ]))
-  // .pipe(cssnano({zindex: false}))
+  .pipe(cssnano({zindex: false}))
   .pipe(gulp.dest('app/css'))
   .pipe(browserSync.reload({
     stream: true
@@ -66,9 +64,9 @@ gulp.task('reload', function(){
 });
 
 gulp.task('scripts', function() {
-    gulp.src(['js/jquery-3.0.0.min.js', 'js/slick.min.js', 'js/jquery.formstyler.js', 'js/enscroll-0.6.2.min.js', 'js/jquery.maskedinput.min.js', 'js/bootstrap/collapse.js', 'js/bootstrap/transition.js', 'js/timer.js', 'js/script.js'])
-        .pipe(concat('all.js'))
-        .pipe(uglify())
+    gulp.src(['js/jquery-3.0.0.min.js', 'js/slick.min.js'/*, 'js/jquery.formstyler.js', 'js/enscroll-0.6.2.min.js', 'js/jquery.maskedinput.min.js', 'js/bootstrap/collapse.js', 'js/bootstrap/transition.js', 'js/timer.js'*/, 'js/script.js'])
+        // .pipe(concat('all.js'))
+        // .pipe(uglify())
         .pipe(gulp.dest('app/js'))
 });
 

@@ -1,0 +1,27 @@
+.lang {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+
+  img {
+    margin-right: 6px;
+  }
+
+  &__item {
+    display: none;
+    @include font-fpt-medium();
+    font-size: 11px;
+    line-height: 1.2em;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
+    &._show {
+      display: block;
+    }
+  }
+}

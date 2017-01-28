@@ -1,0 +1,24 @@
+.logo {
+  display: flex;
+  align-items: center;
+  @include  font-fpt-medium();
+  color: #000;
+  text-decoration: none;
+
+  &__image {
+    width: 30px;
+    margin-right: 12px;
+    line-height: 0;
+  }
+
+  &__title {
+    margin-right: 7px;
+    font-size: 21px;
+    text-transform: uppercase;
+  }
+
+  &__slogan {
+    font-size: 11px;
+    line-height: .8em;
+  }
+}

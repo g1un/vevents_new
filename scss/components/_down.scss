@@ -1,0 +1,44 @@
+.down {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+
+  &__link {
+    display: block;
+    padding-left: 11px;
+    @include font-fpt-medium();
+    font-size: 11px;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    cursor: default;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 3px;
+      margin-top: -4px;
+      height: 8px;
+      width: 1px;
+      background: #000;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 1px;
+      width: 4px;
+      height: 4px;
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+      transform: rotate(-45deg);
+    }
+  }
+}

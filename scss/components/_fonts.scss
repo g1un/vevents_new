@@ -1,38 +1,54 @@
-/*fonts*/
 @font-face {
-	font-family: Proxima-Nova-Reg;
-	src: url(../fonts/proxima_nova_regular-webfont.woff);
+	font-family: FuturaPTMedium;
+	src: url(../fonts/FuturaPTMedium.woff2),
+		 url(../fonts/FuturaPTMedium.woff);
 	font-weight: normal;
 }
 
+@mixin font-fpt-medium() {
+	font-family: FuturaPTMedium, sans-serif;
+}
+
 @font-face {
-	font-family: Proxima-Nova-Reg;
-	src: url(../fonts/proxima_nova_regular-webfont.woff2);
+	font-family: RistrettoPro-Medium;
+	src: url(../fonts/ristrettopro-medium.woff2),
+		 url(../fonts/ristrettopro-medium.woff);
 	font-weight: normal;
 }
 
+@mixin font-rp-medium() {
+	font-family: RistrettoPro-Medium, sans-serif;
+}
+
 @font-face {
-	font-family: Proxima-Nova-Semibold;
-	src: url(../fonts/proxima_nova_semibold-webfont.woff);
+	font-family: FuturaPTBook;
+	src: url(../fonts/FuturaPTBook.woff2),
+		 url(../fonts/FuturaPTBook.woff);
 	font-weight: normal;
 }
 
+@mixin font-fpt-book() {
+	font-family: FuturaPTBook, sans-serif;
+}
+
 @font-face {
-	font-family: Proxima-Nova-Semibold;
-	src: url(../fonts/proxima_nova_semibold-webfont.woff2);
+	font-family: FuturaPTDemi;
+	src: url(../fonts/FuturaPTDemi.woff2),
+		 url(../fonts/FuturaPTDemi.woff);
 	font-weight: normal;
 }
 
-//molnia
-@font-face {
-	font-family: 'MolniaPro-Medium';
-	src: url('../fonts/molnia-pro-medium-webfont.woff2') format('woff2'),
-		 url('../fonts/molnia-pro-medium-webfont.woff') format('woff');
+@mixin font-fpt-demi() {
+	font-family: FuturaPTDemi, sans-serif;
 }
 
 @font-face {
-	font-family: 'MolniaPro-Bold';
-	src: url('../fonts/molnia-pro-bold-webfont.woff2') format('woff2'),
-		 url('../fonts/molnia-pro-bold-webfont.woff') format('woff');
+	font-family: GaramondPremrPro;
+	src: url(../fonts/GaramondPremrPro.woff2),
+		 url(../fonts/GaramondPremrPro.woff);
+	font-weight: normal;
 }
-/*end of fonts*/
+
+@mixin font-gp-pro() {
+	font-family: GaramondPremrPro, sans-serif;
+}

@@ -1,0 +1,22 @@
+.nav {
+  width: 596px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    display: block;
+    @include  font-fpt-medium();
+    font-size: 11px;
+    line-height: 1.2em;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

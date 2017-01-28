@@ -1,0 +1,13 @@
+mixin promo(id, slides)
+	.promo
+		.promo__list.js-slider(id="#{id}")
+			each val in slides
+				.promo__item.js-slider-item
+					img(src="img/#{val.img}.png", alt="#{val.img}").promo__image
+					.promo__inner
+						.promo__person!= val.person
+						.promo__slogan!= val.slogan
+						.promo__ornament
+							img(src="img/ornament.png", alt="ornament")
+
+

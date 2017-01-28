@@ -1,0 +1,9 @@
+.content-title {
+	margin: 0 auto 15px;
+	max-width: 680px;
+	@include font-fpt-book();
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-decoration: underline;
+}

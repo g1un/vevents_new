@@ -14,18 +14,13 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
-    "gulp-img64": "0.0.6",
-    "gulp-inject": "^4.1.0",
-    "gulp-inject-svg": "^0.1.9",
     "gulp-inline": "^0.1.2",
     "gulp-jade": "^1.1.0",
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-svgmin": "^1.2.3",
-    "gulp-svgstore": "^6.0.0",
     "gulp-uglify": "^2.0.0",
     "path": "^0.12.7",
-    "run-sequence": "^1.2.2",
-    "svgo": "^0.7.1"
+    "run-sequence": "^1.2.2"
   }
 }
