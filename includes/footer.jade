@@ -1,0 +1,13 @@
+mixin footer()
+	footer.footer
+		-
+			var footerList = [
+				'WHAT WE<br>REALY CARE ABOUT',
+				'JOIN<br>V-EVENTS CLUB',
+				'ORGANIZE<br>THE EVENT',
+				'ABOUT<br>V-EVENTS<br>UNIVERSITY'
+			]
+		each val, index in footerList
+			a(href='#').footer__item
+				img(src='img/footer-img-#{index}.jpg')
+				h4!= val

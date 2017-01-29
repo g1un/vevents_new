@@ -64,7 +64,7 @@ gulp.task('reload', function(){
 });
 
 gulp.task('scripts', function() {
-    gulp.src(['js/jquery-3.0.0.min.js', 'js/slick.min.js'/*, 'js/jquery.formstyler.js', 'js/enscroll-0.6.2.min.js', 'js/jquery.maskedinput.min.js', 'js/bootstrap/collapse.js', 'js/bootstrap/transition.js', 'js/timer.js'*/, 'js/script.js'])
+    gulp.src(['js/jquery-3.0.0.min.js', 'js/slick.min.js', 'jquery.formstyler.js', 'js/script.js'])
         // .pipe(concat('all.js'))
         // .pipe(uglify())
         .pipe(gulp.dest('app/js'))

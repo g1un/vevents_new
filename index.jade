@@ -9,6 +9,9 @@ html
 		include includes/frame
 		include includes/promo
 		include includes/news
+		include includes/portfolio
+		include includes/principles
+		include includes/footer
 
 		+frame()
 		+promo(
@@ -32,7 +35,12 @@ html
 			]
 		)
 		+news(["1", "2", "3"])
+		+portfolio()
+		+principles()
+		+footer()
 
 		script(src='js/jquery-3.0.0.min.js')
+		script(src='js/jquery-ui.min.js')
 		script(src='js/slick.min.js')
+		script(src='js/jquery.formstyler.js')
 		script(src='js/script.js')

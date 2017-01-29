@@ -21,4 +21,8 @@ $(document).ready(function() {
 
 	slider.run('#promo');
 	slider.run('#news');
+
+	//select
+	var select = $('.js-select select');
+	select.styler();
 });

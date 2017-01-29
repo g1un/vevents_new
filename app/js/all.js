@@ -25,17 +25,27 @@ $(document).ready(function() {
 
 	//slider
 	var slider = {
-		"container": $(".js-slider"),
-		"item": $(".js-slider-item"),
-		"options": {
-			slide: item,
-			prevArrow: '<button type="button" class="promo__nav _prev"></button>',
-			nextArrow: '<button type="button" class="promo__nav _next"></button>'
+		"container": function(sliderId) {
+			return $(sliderId);
 		},
-		"run": function() {
-			this.container.slick(options);
+		// "item": $(".js-slider-item"),
+		"options": function(sliderId) {
+			return {
+				slide: sliderId + " .js-slider-item",
+				// appendArrows: sliderId + " .js-slider-nav",
+				prevArrow: '<button type="button" class="slider-nav _prev"></button>',
+				nextArrow: '<button type="button" class="slider-nav _next"></button>'
+			}
+		},
+		"run": function(sliderId) {
+			this.container(sliderId).slick(this.options(sliderId));
 		}
 	};
 
-	slider.run();
+	slider.run('#promo');
+	slider.run('#news');
+
+	//select
+	var select = $('.js-select select');
+	select.styler();
 });

@@ -1,0 +1,37 @@
+include ../includes/content-title
+
+mixin principles()
+	.principles
+		+content-title('About us')
+		.title-big.principles__title Our principles
+		.principles__photo
+			img(src="img/principles-img-1.jpg")
+		.principles__list.clearfix
+			.principles__item._left
+				h4
+					img(src="img/svg/quadro-01.svg")
+					|Trust
+				p #[span We trust our clients and ask them to trust us. ]Our team has to create the event which would not disappoint you and it would become our mutual success. That is why we protect our creative process from any interference, because everyone should mind their own business and not disturb others.
+			.principles__item._right
+				h4
+					img(src="img/svg/quadro-02.svg")
+					|RESPONSIBILITY
+				p #[span We are fully responsible for what we do and we demand the same from our partners and clients. ]We stick to deadlines, never late for meetings, rehearse according to the schedules, try to jump from 200 meters, ride sport cars, try on a 10-kilogram suit, fly under the big top or taste a new dish from a chef. We do it, because we are responsible for the result.
+			.principles__item._left
+				.principles__image._left
+					img(src="img/principles-img-2.jpg")
+			.principles__item._right
+				.principles__image._right
+					img(src="img/principles-img-3.jpg")
+			.principles__item._left
+				h4
+					img(src="img/svg/quadro-03.svg")
+					|OPENNESS
+				p We are open for a dialogue.#[span Always and everywhere. ]We find the inspiration in communication with the world. We like to experiment and to open something new, to learn, to go off the beaten track, because we believe that the strength of a company lies in its openness.
+			.principles__item._right
+				h4
+					img(src="img/svg/quadro-04.svg")
+					|UNCOMPROMISING ATTITUDE
+				p There is no compromise when it comes to quality. If we are organizing an event there are no small details. We care about the clips colour on the speaker’s documents or about the upholstery quality of a guest’s chair. We choose only the best contractors, exclusive locations and platforms. We work only with those who love what they do and advocate the same principles as we do.
+		.principles__more
+			+btn-more('Know more')

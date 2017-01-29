@@ -1,2 +1,2 @@
-mixin btn-more()
-	a(href="#", class!=attributes.class).btn-more Read More
+mixin btn-more(title)
+	a(href="#", class!=attributes.class).btn-more!= title ? title : 'Read More'

@@ -1,0 +1,20 @@
+include ../includes/content-title
+
+mixin portfolio()
+	.portfolio
+		+content-title('Portfolio')
+		.portfolio__select
+			span Corporate events
+		//-.select.portfolio__select.js-select
+			//	select(name="portfolio-select")
+			//		option(value='0') Corporate events
+			//		option(value='1') Special events
+			//		option(value='2') Trade events
+		.portfolio__list
+			-var i = 0
+			while i < 10
+				a(href='#').portfolio__item
+					img(src="img/portfolio-item-img-#{i}.jpg")
+					.portfolio__item-title The evening<br>in lion palace
+						span show
+				-i++
