@@ -20,16 +20,27 @@
 	}
 
 	&__list {
-		margin: 0 auto 100px;
+		margin: 0 auto 106px;
 		max-width: 800px;
 	}
 
 	&__item {
-		width: 45%;
-		margin: 74px 0;
+		width: 43%;
 
-		&:first-child {
-			margin-top: 0;
+		&._trust {
+			margin: 0 0 75px;
+		}
+
+		&._responsibility {
+			margin: 100px 0 75px;
+		}
+
+		&._opennes {
+			margin-top: 75px;
+		}
+
+		&._uncompromising {
+			margin-top: 66px;
 		}
 
 		&:last-child {
@@ -44,10 +55,14 @@
 			float: right;
 		}
 
+		&._image {
+			margin: 0;
+		}
+
 		h4 {
 			@include font-ftp-cond-bold();
 			font-size: 26px;
-			line-height: 1.2em;
+			line-height: 1.1em;
 			font-weight: 400;
 			text-transform: uppercase;
 			margin-bottom: 15px;
@@ -56,9 +71,8 @@
 			img,
 			svg {
 				position: absolute;
-				top: 50%;
+				top: 7px;
 				left: -25px;
-				margin-top: -8px;
 				display: inline-block;
 				vertical-align: baseline;
 				width: 16px;
@@ -68,6 +82,7 @@
 		p {
 			@include font-fpt-book();
 			font-size: 14px;
+			line-height: 1.15em;
 
 			span {
 				background: #f8ea1b;

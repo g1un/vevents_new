@@ -1,5 +1,6 @@
 .news {
 	padding-bottom: 48px;
+	margin-bottom: 87px;
 
 	&__container {
 		margin: 0 auto;
@@ -9,17 +10,21 @@
 	&__text {
 
 		h4 {
+			max-width: 460px;
 			margin-bottom: 15px;
 			@include font-fpt-demi();
 			font-size: 27px;
+			line-height: 1em;
 			font-weight: 400;
 			text-transform: uppercase;
 		}
 
 		p {
+			max-width: 460px;
 			margin: 15px 0;
 			@include font-gp-pro;
 			font-size: 16px;
+			line-height: 1.1em;
 		}
 
 		a {
@@ -32,7 +37,7 @@
 	}
 
 	&__image {
-		margin: 60px 0;
+		margin: 63px 0;
 		text-align: center;
 		line-height: 0;
 
