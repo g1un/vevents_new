@@ -1,70 +1,44 @@
-/*select*/
 .select {
-  //@extend .btn;
 
-  padding: 0;
+	.ui-selectmenu-button {
 
-  .jq-selectbox {
-    width: inherit;
-    height: inherit;
+		&.ui-button {
+			width: auto;
+			border: none;
+			background: transparent;
+			padding: 0;
+			margin: 0;
+			line-height: 1em;
+			color: #000;
+			display: inline-block;
+			vertical-align: top;
+			cursor: pointer;
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: -36px;
+				margin-top: -4px;
+				border-top: 8px solid #000;
+				border-left: 8px solid transparent;
+				border-right: 8px solid transparent;
+			}
+		}
+	}
 
-    &.opened {
+	.ui-widget {
+		@include font-fpt-book();
+	}
 
-      .jq-selectbox__trigger {
-        border-top-color: red;
-      }
-    }
-  }
+	.ui-selectmenu-text {
+		margin: 0;
+	}
 
-  .jq-selectbox__select {
-    display: table-cell;
-    vertical-align: middle;
+	.ui-selectmenu-icon {
 
-    width: inherit;
-    height: inherit;
-
-    padding-left: 24px;
-    padding-right: 31px;
-  }
-
-  .jq-selectbox__dropdown {
-    margin: 15px 0 15px -1px;
-    padding: 8px 17px 8px 0;
-
-    overflow: hidden;
-
-    background: #fff;
-
-    border-radius: 24px;
-    border: solid 1px blue;
-
-    ul {
-      min-width: 100%;
-      max-height: 128px;
-      box-sizing: border-box;
-
-      overflow: auto;
-    }
-
-    li {
-      padding-left: 24px;
-      padding-right: 31px;
-
-      //@extend .text-xs-common;
-      line-height: 32px;
-
-      &:hover,
-      &:focus {
-        color: red;
-      }
-    }
-  }
-
-  .jq-selectbox__trigger {
-    //@extend .triangle-down;
-
-    top: 18px;
-    right: 17px;
-  }
+		&.ui-icon {
+			display: none;
+		}
+	}
 }
-/*/select*/

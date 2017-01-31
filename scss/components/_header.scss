@@ -23,4 +23,12 @@
     justify-content: flex-end;
     min-width: 210px;
   }
+
+  @media (max-width: 1024px) {
+
+		&__logo,
+		&__lang {
+			min-width: 140px;
+		}
+  }
 }

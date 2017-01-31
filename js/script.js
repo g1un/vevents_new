@@ -24,5 +24,8 @@ $(document).ready(function() {
 
 	//select
 	var select = $('.js-select select');
-	select.styler();
+	// select.styler();
+	select.selectmenu({
+		appendTo: '.js-select'
+	});
 });

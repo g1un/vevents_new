@@ -21,4 +21,15 @@
     font-size: 11px;
     line-height: .8em;
   }
+
+  @media (max-width: 1024px) {
+
+		&__title {
+			margin-right: 0;
+		}
+
+    &__slogan {
+			display: none;
+    }
+  }
 }

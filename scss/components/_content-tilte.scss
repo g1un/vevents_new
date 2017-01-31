@@ -3,7 +3,12 @@
 	max-width: 680px;
 	@include font-fpt-book();
 	font-size: 14px;
+	line-height: 1.2em;
 	font-weight: 400;
 	text-transform: uppercase;
 	text-decoration: underline;
+
+	@media (max-width: 1366px) {
+		max-width: 636px;
+	}
 }

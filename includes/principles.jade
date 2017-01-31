@@ -2,8 +2,9 @@ include ../includes/content-title
 
 mixin principles()
 	.principles
-		+content-title('About us')
-		.title-big.principles__title Our principles
+		.title-big.principles__title
+			+content-title('About us')
+			|Our principles
 		.principles__photo
 			img(src="img/principles-img-1.jpg")
 		.principles__list.clearfix
