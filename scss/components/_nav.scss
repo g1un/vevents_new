@@ -43,7 +43,8 @@
 		align-items: center;
 
 		&._show {
-			display: flex;
+			//display: flex;
+			display: block;
 		}
 
 		&__list {
