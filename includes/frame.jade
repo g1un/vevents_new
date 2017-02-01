@@ -6,15 +6,27 @@ mixin frame()
 					img(src="img/svg/logo.svg")
 				.logo__title V-events
 				.logo__slogan Limited liability<br>company
-			nav.nav.header__nav
+			nav.nav.header__nav.js-close-object(data-html-unscroll="true")
+				.close.nav__close.js-close
 				ul.nav__list
 					each val in ["Company", "Portfolio", "V-events club", "V-events univercity", "Blog", "Contacts"]
 						li.nav__item
 							a(href="#").nav__link!= val
+				.lang._nav.nav__lang
+					img(src="img/svg/flag-white.png")
+					a(href="#").lang__item._ru._show Russian
+					a(href="#").lang__item._en Английский
+				.social._nav.nav__social
+					ul.social__list
+						each val in ["fb", "ig", "yt"]
+							li.social__item
+								a(href="#", class="social__link _#{val}")
+									img(src="img/svg/#{val}.svg")
 			.lang.header__lang
 				img(src="img/svg/flag.png")
 				a(href="#").lang__item._ru._show Russian
 				a(href="#").lang__item._en Английский
+			.sandwich.header__sandwich(data-open-btn="nav")
 		.social
 			ul.social__list
 				each val in ["fb", "ig", "yt"]

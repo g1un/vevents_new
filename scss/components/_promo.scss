@@ -93,7 +93,6 @@
 		margin-bottom: 109px;
 
 		&__inner {
-			//padding-top: 9.4%;
 			padding-left: 12%;
 		}
 
@@ -109,5 +108,98 @@
 				padding: 2px 15px;
 			}
 		}
+	}
+
+	@media (max-width: 1024px) {
+
+		&__image {
+			margin: 0 auto;
+		}
+
+		&__person {
+			padding: 0;
+
+			span {
+				padding: 0 18px;
+				line-height: 22px;
+				background: #fff;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		height: calc(100vh - 48px);
+		padding-bottom: 0;
+		margin-bottom: 70px;
+
+		&__item {
+			height: calc(100vh - 48px);
+		}
+	}
+
+	@media (max-width: 600px) {
+
+		&__inner {
+			justify-content: flex-end;
+			padding: 0 0 60px 20px;
+		}
+
+		&__person {
+			padding: 0;
+
+			span {
+				padding: 0 15px;
+				line-height: 22px;
+				background: #fff;
+			}
+		}
+
+		&__slogan {
+			font-size: 34px;
+			line-height: 34px;
+
+			span {
+				padding: 2px 8px;
+			}
+		}
+
+		&__ornament {
+			display: none;
+		}
+
+		.slick-dots {
+			position: absolute;
+			left: 34px;
+			bottom: 34px;
+			font-size: 0;
+
+			li {
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 9px;
+				width: 11px;
+				height: 11px;
+				border: 2px solid #000;
+				border-radius: 50%;
+				background: #fff;
+				cursor: pointer;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				button {
+					display: none;
+				}
+				
+				&.slick-active {
+					background: #000;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 335px) {
+		margin-bottom: 38px;
 	}
 }

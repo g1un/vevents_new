@@ -3,7 +3,7 @@ include ../includes/btn-more
 
 mixin news(newsList)
 	.news
-		+content-title('Industry News')
+		+content-title('Industry News').news__title
 		.news__list#news.js-slider
 			each val in newsList
 				.news__item.js-slider-item
@@ -12,6 +12,8 @@ mixin news(newsList)
 						p 6th International conference Eventex, for professionals in special events industry, will be held in Sofia from March 16 to March 18. As part of the conference, the best projects and companies of the “live communication” industry will be presented with awards during the Grand ceremony. Link for registration: <a href="#">http://eventex.co/register-awards/</a>
 					.news__image
 						img(src="img/industry-news-img-1.png", alt="industry-news-img-1")
+					.news__image._xs
+						img(src="img/industry-news-img-2.png", alt="industry-news-img-2")
 					.news__container.clearfix
 						.news__more
 							+btn-more()

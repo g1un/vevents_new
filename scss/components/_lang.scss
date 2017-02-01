@@ -4,6 +4,8 @@
   line-height: 0;
 
   img {
+		display: inline-block;
+		vertical-align: middle;
     margin-right: 6px;
   }
 
@@ -21,7 +23,36 @@
     }
 
     &._show {
-      display: block;
+      display: inline-block;
+			vertical-align: middle;
     }
   }
+
+  &._nav {
+		display: none;
+
+		.lang {
+
+			&__item {
+				@include font-fpt-book();
+				font-size: 26px;
+				line-height: 1.2em;
+				color: #fff;
+				text-transform: uppercase;
+				text-align: center;
+				border-bottom-color: transparent;
+				&:hover {
+					border-bottom: 1px solid #fff;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		display: none;
+
+		&._nav {
+			display: block;
+		}
+	}
 }

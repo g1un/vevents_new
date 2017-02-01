@@ -41,4 +41,8 @@
       transform: rotate(-45deg);
     }
   }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }

@@ -16,8 +16,23 @@ body {
   font-size: 16px;
 }
 
+html {
+
+	@media (max-width: 767px) {
+
+		&._unscroll {
+			height: 100%;
+			overflow: hidden;
+		}
+	}
+}
+
 body {
   padding: 48px 48px 0;
+
+	@media (max-width: 767px) {
+		padding: 48px 0 0;
+	}
 }
 
 .clearfix::after {

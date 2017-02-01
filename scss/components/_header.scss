@@ -31,4 +31,8 @@
 			min-width: 140px;
 		}
   }
+
+	@media (max-width: 767px) {
+		padding: 0 15px;
+	}
 }

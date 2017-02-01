@@ -1,36 +1,25 @@
-/*close*/
 .close {
-  padding: 0;
+	position: fixed;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
 
-  width: 22px;
-  height: 22px;
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		top: 10px;
+		right: -3px;
+		width: 26px;
+		height: 2px;
+		background: #fff;
+	}
 
-  background: transparent;
-  border: none;
-  outline: none;
+	&:before {
+		transform: rotate(45deg);
+	}
+
+	&:after{
+		transform: rotate(-45deg);
+	}
 }
-
-.close-red {
-  @extend .close;
-
-  &:hover,
-  &:focus {
-
-    rect {
-      fill: $color-red-radical;
-    }
-  }
-}
-
-.close-blue {
-  @extend .close;
-
-  &:hover,
-  &:focus {
-
-    rect {
-      fill: $color-torea-bay;
-    }
-  }
-}
-/*/close*/

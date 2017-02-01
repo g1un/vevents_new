@@ -4,4 +4,8 @@
 	line-height: 1em;
 	font-weight: 400;
 	text-transform: uppercase;
+
+	@media (max-width: 600px) {
+		font-size: 28px;
+	}
 }
