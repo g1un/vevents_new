@@ -1,0 +1,28 @@
+.slick-dots {
+	position: absolute;
+	font-size: 0;
+
+	li {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 9px;
+		width: 11px;
+		height: 11px;
+		border: 2px solid #000;
+		border-radius: 50%;
+		background: #fff;
+		cursor: pointer;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		button {
+			display: none;
+		}
+
+		&.slick-active {
+			background: #000;
+		}
+	}
+}

@@ -54,12 +54,34 @@
 }
 
 @font-face {
+	font-family: GaramondPremrPro-it;
+	src: url(../fonts/GaramondPremrPro-It.woff2),
+		 url(../fonts/GaramondPremrPro-It.woff);
+	font-weight: normal;
+}
+
+@mixin font-gp-pro-it() {
+	font-family: GaramondPremrPro-it, sans-serif;
+}
+
+@font-face {
 	font-family: FuturaPTCondBold;
 	src: url(../fonts/FuturaPTCondBold.woff2),
 		 url(../fonts/FuturaPTCondBold.woff);
 	font-weight: normal;
 }
 
-@mixin font-ftp-cond-bold() {
+@mixin font-fpt-cond-bold() {
 	font-family: FuturaPTCondBold, sans-serif;
+}
+
+@font-face {
+	font-family: FuturaPTBold;
+	src: url(../fonts/FuturaPTBold.woff2),
+		 url(../fonts/FuturaPTBold.woff);
+	font-weight: normal;
+}
+
+@mixin font-fpt-bold() {
+	font-family: FuturaPTBold, sans-serif;
 }
