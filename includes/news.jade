@@ -2,9 +2,9 @@ include ../includes/content-title
 include ../includes/btn-more
 
 mixin news(newsList)
-	.news
+	.news#news
 		+content-title('Industry News').news__title
-		.news__list#news.js-slider
+		.news__list#news-slider.js-slider
 			each val in newsList
 				.news__item.js-slider-item
 					.news__text.news__container

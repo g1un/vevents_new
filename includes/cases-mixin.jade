@@ -1,0 +1,20 @@
+mixin cases-mixin()
+	.cases#cases
+		#cases-slider.cases__slider.js-slider.js-case-slider
+			each val, index in ["1", "2", "3"]
+				.cases__slide.js-slider-item
+					.cases__slide-content(style="background-image: url(img/case-slide-1.jpg)")
+						h3 Best of corporate
+						h2 The evening in lion palace
+						img(src="img/case-title-ornament.png", alt="case-title-ornament")
+		.cases__wrapper
+			.cases__content.js-case-content
+				h2 Corporate events
+				.cases__text
+					p Jack Morton, the pioneer of modern corporate events, could not even imagine how popular and effective his invention would become. Professional days, teambuilding and quest activities, sport projects, family days, ceremonies, conferences, anniversaries and MICE represent the smallest part of V-events projects.
+				ul.cases__list
+					each val, index in ["Multimedia performance “prostyie istorii”", "The evening in lion palace", "Hunger games", "Valio awards 2015", "Ocean journey", "5 years we are legenda"]
+						li.cases__list-item
+							a(href="#").cases__list-link
+								.cases__list-image(style="background-image: url(img/cases-item-#{index+1}.jpg)")
+								h4!= val
