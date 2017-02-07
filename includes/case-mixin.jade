@@ -1,7 +1,7 @@
 mixin case-mixin()
 	.case#case
 		.case__wrapper
-			.case__content.js-case-content
+			.case__content.js-grid-content
 				a(href="#").case__back Back to corporate events
 				h2 The evening in lion palace
 				.case__ornament
@@ -51,7 +51,7 @@ mixin case-mixin()
 					a(href="#")
 					a(href="#")
 					a(href="#")
-		#case-slider.case__slider.js-slider.js-case-slider
+		#case-slider.case__slider.js-slider.js-grid-slider
 			each val, index in ["1", "2", "3"]
 				.case__slide.js-slider-item
 					.case__slide-image(style="background-image: url(img/case-slide-1.jpg)")

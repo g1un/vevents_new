@@ -1,0 +1,34 @@
+mixin news-mixin()
+	.grid#news-page
+		.grid__left
+			.news-page.grid__content
+				h2.news-page__title News
+				.news-item._pinned.news-page__item
+					span.news-item__date january 05, 2017
+					h3.news-item__title Summer Event Forum – Event planning as a business
+					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+				.news-page__year 2016
+				.news-item.news-page__item
+					span.news-item__date january 05, 2016
+					h3.news-item__title Summer Event Forum – Event planning as a business
+					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+				.news-item._pinned.news-page__item
+					span.news-item__date january 05, 2016
+					h3.news-item__title Summer Event Forum – Event planning as a business
+					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+				.news-item._pinned.news-page__item
+					span.news-item__date january 05, 2016
+					h3.news-item__title Summer Event Forum – Event planning as a business
+					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+				.news-item.news-page__item
+					span.news-item__date january 05, 2016
+					h3.news-item__title Summer Event Forum – Event planning as a business
+					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+
+		#news-page-slider.grid__right.js-slider.js-grid-slider
+			each val, index in ["1", "2", "3"]
+				.grid__slide.js-slider-item
+					.slide-content.grid__slide-image(style="background-image: url(img/news-page-slide-1.jpg)")
+						h3 Pinned posts
+						h2 Summer Event Forum –<br> Event planning as a business
+						img(src="img/case-title-ornament.png", alt="case-title-ornament")

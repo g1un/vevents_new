@@ -85,3 +85,14 @@
 @mixin font-fpt-bold() {
 	font-family: FuturaPTBold, sans-serif;
 }
+
+@font-face {
+	font-family: FuturaPTHeavy;
+	src: url(../fonts/FuturaPTHeavy.woff2),
+		 url(../fonts/FuturaPTHeavy.woff);
+	font-weight: normal;
+}
+
+@mixin font-fpt-heavy() {
+	font-family: FuturaPTHeavy, sans-serif;
+}

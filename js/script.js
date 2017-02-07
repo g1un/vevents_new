@@ -46,6 +46,7 @@ $(document).ready(function() {
 	slider.run('#news-slider');
 	slider.run('#case-slider', 'case');
 	slider.run('#cases-slider', 'case');
+	slider.run('#news-page-slider', 'case');
 
 	//select
 	var select = $('.js-select select');
@@ -96,22 +97,22 @@ $(document).ready(function() {
 	//case fixed slider
 	var caseSlider = {
 		"scrollPosition": $(window).scrollTop(),
-		"caseContentHeight": $('.js-case-content').outerHeight(),
+		"caseContentHeight": $('.js-grid-content').outerHeight(),
 		"viewportHeight": $(window).height(),
-		"slider": $('.js-case-slider'),
+		"slider": $('.js-grid-slider'),
 		"action": function() {
 			if($(window).outerWidth() <= 999) return;
 			if(($(window).scrollTop() + $(window).height() > $('.footer').offset().top)) {
-				$('.js-case-slider').addClass('_down');
+				$('.js-grid-slider').addClass('_down');
 			} else {
-				$('.js-case-slider').removeClass('_down');
+				$('.js-grid-slider').removeClass('_down');
 			}
 			$(window).scroll(function() {
 				if($(window).outerWidth() <= 999) return;
 				if(($(window).scrollTop() + $(window).height() > $('.footer').offset().top)) {
-					$('.js-case-slider').addClass('_down');
+					$('.js-grid-slider').addClass('_down');
 				} else {
-					$('.js-case-slider').removeClass('_down');
+					$('.js-grid-slider').removeClass('_down');
 				}
 			})
 		}
