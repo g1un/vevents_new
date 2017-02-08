@@ -66,4 +66,35 @@
 			margin-bottom: 25px;
 		}
 	}
+
+	@media only screen and (max-width: 999px) {
+		padding: 84px 110px 40px 118px;
+		max-width: 770px;
+		width: auto;
+
+		&__title {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+
+		&__item {
+			margin-bottom: 30px;
+		}
+
+		&__year {
+			margin-bottom: 30px;
+
+			&:after {
+				right: 0;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 999px) {
+		padding: 50px 35px;
+
+		&__year {
+			display: none;
+		}
+	}
 }

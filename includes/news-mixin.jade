@@ -1,34 +1,49 @@
 mixin news-mixin()
-	.grid#news-page
+	.grid._noslider#news-page
 		.grid__left
 			.news-page.grid__content
 				h2.news-page__title News
-				.news-item._pinned.news-page__item
+				a(href="#").news-item._pinned.news-page__item.js-grid-news-btn
 					span.news-item__date january 05, 2017
 					h3.news-item__title Summer Event Forum – Event planning as a business
 					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
 				.news-page__year 2016
-				.news-item.news-page__item
+				a(href="#").news-item.news-page__item.js-grid-news-btn
 					span.news-item__date january 05, 2016
 					h3.news-item__title Summer Event Forum – Event planning as a business
 					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
-				.news-item._pinned.news-page__item
+				a(href="#").news-item._pinned.news-page__item.js-grid-news-btn
 					span.news-item__date january 05, 2016
 					h3.news-item__title Summer Event Forum – Event planning as a business
 					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
-				.news-item._pinned.news-page__item
+				a(href="#").news-item._pinned.news-page__item.js-grid-news-btn
 					span.news-item__date january 05, 2016
 					h3.news-item__title Summer Event Forum – Event planning as a business
 					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
-				.news-item.news-page__item
+				a(href="#").news-item.news-page__item.js-grid-news-btn
 					span.news-item__date january 05, 2016
 					h3.news-item__title Summer Event Forum – Event planning as a business
 					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
 
-		#news-page-slider.grid__right.js-slider.js-grid-slider
-			each val, index in ["1", "2", "3"]
-				.grid__slide.js-slider-item
-					.slide-content.grid__slide-image(style="background-image: url(img/news-page-slide-1.jpg)")
-						h3 Pinned posts
-						h2 Summer Event Forum –<br> Event planning as a business
-						img(src="img/case-title-ornament.png", alt="case-title-ornament")
+		.grid__right.js-grid-slider
+			.grid__slider.js-slider#news-page-slider
+				each val, index in ["1", "2", "3"]
+					.grid__slide.js-slider-item
+						.slide-content.grid__slide-image(style="background-image: url(img/news-page-slide-1.jpg)")
+							h3 Pinned posts
+							h2 Summer Event Forum –<br> Event planning as a business
+							img(src="img/case-title-ornament.png", alt="case-title-ornament")
+			.grid__news.js-grid-news
+				.grid-news
+					.grid-news__wrapper
+						.text-date.grid-news__date March 14, 2016
+						h3 Summer Event Forum –<br> Event planning as a business
+						.grid-news__preview A big summer business conference for professionals in the event industry — Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+						img(src="img/grid-news-1.jpg", alt="grid-news-1")
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+						.share.grid-news__share Share
+							a(href="#")
+							a(href="#")
+							a(href="#")
+

@@ -24,7 +24,7 @@
     min-width: 210px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1365px) {
 
 		&__logo,
 		&__lang {
@@ -32,7 +32,7 @@
 		}
   }
 
-	@media (max-width: 767px) {
+	@media (max-width: 999px) {
 		padding: 0 15px;
 	}
 }

@@ -168,4 +168,27 @@ $(document).ready(function() {
 	};
 	asideNav.run();
 	asideNav.navTo();
+
+	//news switcher
+	var newsSwitcher = {
+		"btn": $('.js-grid-news-btn'),
+		"showContent": $('.js-grid-news'),
+		"hiddenContent": $('.js-slider'),
+		"toggle": function() {
+			var _showContent = this.showContent;
+			var _hiddenContent = this.hiddenContent;
+			this.btn.on('click', function(e) {
+				e.preventDefault();
+				$(this).toggleClass('_active');
+				if(!_showContent.hasClass('_show')) {
+					_showContent.addClass('_show');
+					_hiddenContent.addClass('_hidden');
+				} else {
+					_showContent.removeClass('_show');
+					_hiddenContent.removeClass('_hidden');
+				}
+			});
+		}
+	};
+	newsSwitcher.toggle();
 });

@@ -86,7 +86,7 @@
 		}
 	}
 
-	@media (max-width: 767px) {
+	@media (max-width: 999px) {
 		display: none;
 
 		&._nav {
@@ -94,7 +94,7 @@
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 767px) {
 
 		&._nav {
 			width: 240px;
