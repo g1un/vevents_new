@@ -5,6 +5,17 @@
 	&__title {
 		margin: 0 auto 50px;
 		max-width: 680px;
+
+		&._company {
+			max-width: 100%;
+			margin-bottom: 90px;
+			@include font-fpt-bold();
+			font-size: 40px;
+			line-height: 1em;
+			font-weight: 400;
+			text-transform: uppercase;
+			text-align: center;
+		}
 	}
 
 	&__photo {
@@ -112,11 +123,15 @@
 		text-align: center;
 	}
 
-	@media (max-width: 1366px) {
+	@media (max-width: 1919px) {
 		margin-bottom: 60px;
 
 		&__title {
 			max-width: 636px;
+
+			&._company {
+				padding-left: 100px;
+			}
 		}
 
 		&__photo {
@@ -158,7 +173,14 @@
 		}
 	}
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1365px) {
+
+		&__title {
+
+			&._company {
+				padding-left: 25px;
+			}
+		}
 
 		&__image {
 
@@ -173,7 +195,7 @@
 		}
 	}
 
-	@media (max-width: 1024px) {
+	@media (max-width: 999px) {
 
 		&__title {
 			max-width: 680px;

@@ -78,9 +78,9 @@ gulp.task('images', function(){
 		.pipe(gulp.dest('app/img/effects'))
 });
 
-gulp.task('watch', ['browserSync', 'jade', 'sass', 'inline', 'scripts', 'svgmin', 'images'], function(){
+gulp.task('watch', ['browserSync', 'jade', 'sass', 'inline', 'scripts', 'svgmin'/*, 'images'*/], function(){
     gulp.watch('**/*.scss', ['sass']);
-    gulp.watch('img/effects/**/*.+(png|jpg|gif|svg)', ['images']);
+    // gulp.watch('img/effects/**/*.+(png|jpg|gif|svg)', ['images']);
     gulp.watch('**/*.jade', function() {
       runSequence('jade', 'svgmin', 'inline', 'reload');
     });
