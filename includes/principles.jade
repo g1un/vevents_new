@@ -1,10 +1,14 @@
 include ../includes/content-title
+include ../includes/btn-more
 
-mixin principles()
+mixin principles(company)
 	.principles#principles
-		.title-big.principles__title
-			+content-title('About us')
-			|Our principles
+		if company
+			h3.principles__title._company Our principles
+		else
+			.title-big.principles__title
+				+content-title('About us')
+				|Our principles
 		.principles__photo
 			img(src="img/principles-img-1.jpg")
 		.principles__list.clearfix
@@ -34,5 +38,6 @@ mixin principles()
 					img(src="img/svg/quadro-04.svg")
 					|UNCOMPROMISING<br>ATTITUDE
 				p There is no compromise when it comes to quality. If we are organizing an event there are no small details. We care about the clips colour on the speaker’s documents or about the upholstery quality of a guest’s chair. We choose only the best contractors, exclusive locations and platforms. We work only with those who love what they do and advocate the same principles as we do.
-		.principles__more
-			+btn-more('Know more')
+		if !company
+			.principles__more
+				+btn-more('Know more')

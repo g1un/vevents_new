@@ -1,0 +1,79 @@
+.company {
+	padding-top: 150px;
+
+	&__container {
+		max-width: 840px;
+		margin: 0 auto;
+	}
+
+	&__title {
+		@include font-fpt-bold();
+		font-size: 55px;
+		line-height: 1em;
+		font-weight: 400;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 120px;
+	}
+
+	&__definition {
+		float: left;
+		width: 400px;
+		margin-top: 95px;
+		@include font-fpt-book();
+		font-size: 44px;
+		line-height: .95em;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		@include font-gp-pro();
+		font-size: 16px;
+		line-height: 1.125em;
+		width: 400px;
+		margin: 0 0 20px;
+
+		&._left {
+			float: left;
+		}
+
+		&._right {
+			float: right;
+			clear: right;
+		}
+	}
+
+	&__subtitle {
+		float: left;
+		max-width: 400px;
+		margin: 290px 0 35px;
+		@include font-fpt-medium();
+		font-size: 18px;
+		line-height: 1em;
+		text-transform: uppercase;
+	}
+
+	&__image {
+		float: right;
+		clear: right;
+		margin-top: 150px;
+		margin-right: -200px;
+		margin-bottom: 40px;
+		max-width: 400px;
+		line-height: 0;
+
+		img {
+			float: right;
+		}
+	}
+
+	&__signature {
+		clear: both;
+		float: right;
+		width: 400px;
+		@include font-gp-pro-it();
+		font-size: 15px;
+		line-height: 1.2em;
+	}
+}
