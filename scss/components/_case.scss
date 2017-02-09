@@ -139,13 +139,16 @@
 		bottom: 48px;
 		right: 48px;
 
-		&._down {
-			width: 50%;
-			position: absolute;
-			top: auto;
-			bottom: 48px;
-			right: 0;
-			height: calc(100vh - 96px);
+		@media (min-width: 1000px) {
+
+			&._down {
+				width: 50%;
+				position: absolute;
+				top: auto;
+				bottom: 48px;
+				right: 0;
+				height: calc(100vh - 96px);
+			}
 		}
 
 		.slick-list,

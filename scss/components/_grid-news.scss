@@ -13,6 +13,21 @@
 		padding: 0 20px;
 	}
 
+	&__back {
+		display: none;
+		vertical-align: top;
+		@include font-fpt-book();
+		font-size: 12px;
+		line-height: 1.2em;
+		color: #000;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 	&__date {
 		margin-bottom: 20px;
 	}
@@ -20,7 +35,7 @@
 	h3 {
 		@include font-rp-medium();
 		font-size: 52px;
-		line-height: 1.2em;
+		line-height: 1em;
 		text-transform: uppercase;
 		font-weight: 400;
 		margin-bottom: 15px;
@@ -96,6 +111,67 @@
 
 		&__share {
 			margin-top: 35px;
+		}
+	}
+
+	@media only screen and (max-width: 999px) {
+		max-width: 520px;
+
+		&__back {
+			display: inline-block;
+			margin-bottom: 45px;
+		}
+
+		&__date {
+			margin-bottom: 10px;
+		}
+
+		h3 {
+			margin-bottom: 10px;
+		}
+
+		&__preview {
+			margin-bottom: 30px;
+			padding: 0 30px;
+		}
+
+		img {
+			margin-bottom: 40px;
+		}
+
+		p {
+			font-size: 16px;
+			margin-bottom: 12px;
+			padding: 0 30px;
+		}
+
+		&__share {
+			margin-top: 40px;
+		}
+	}
+
+	@media only screen and (max-width: 999px) {
+
+		h3 {
+			padding: 0 10px;
+		}
+
+		&__preview {
+			margin-bottom: 25px;
+			padding: 0 35px;
+		}
+
+		img {
+			margin-bottom: 25px;
+		}
+
+		p {
+			font-size: 14px;
+			padding: 0 35px;
+		}
+
+		&__share {
+			margin-top: 30px;
 		}
 	}
 }
