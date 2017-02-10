@@ -41,4 +41,19 @@
 			display: none;
 		}
 	}
+
+	@media (max-width: 767px) {
+
+		.ui-selectmenu-button {
+
+			&.ui-button {
+
+				&:after {
+					border-width: 4px;
+					right: -16px;
+					margin-top: -2px;
+				}
+			}
+		}
+	}
 }

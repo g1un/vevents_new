@@ -2,6 +2,10 @@
 	padding-bottom: 48px;
 	margin-bottom: 87px;
 
+	&__title {
+		max-width: 680px;
+	}
+
 	&__container {
 		margin: 0 auto;
 		max-width: 680px;
@@ -93,6 +97,10 @@
 
 	@media (max-width: 1366px) {
 		margin-bottom: 34px;
+
+		&__title {
+			max-width: 636px;
+		}
 
 		&__container {
 			max-width: 636px;
