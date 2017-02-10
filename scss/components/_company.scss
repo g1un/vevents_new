@@ -52,7 +52,7 @@
 
 	&__definition {
 		float: left;
-		width: 400px;
+		max-width: 400px;
 		margin-top: 95px;
 		@include font-fpt-book();
 		font-size: 44px;
@@ -65,7 +65,7 @@
 		@include font-gp-pro();
 		font-size: 16px;
 		line-height: 1.125em;
-		width: 400px;
+		max-width: 400px;
 		position: relative;
 		margin: 0 0 20px;
 
@@ -171,11 +171,11 @@
 
 		&__definition {
 			margin-top: 0;
-			width: 380px;
+			max-width: 380px;
 		}
 
 		&__text {
-			width: 360px;
+			max-width: 360px;
 		}
 
 		&__subtitle {
@@ -226,13 +226,13 @@
 		}
 
 		&__definition {
-			width: 290px;
+			max-width: 290px;
 			font-size: 32px;
 			line-height: 1em;
 		}
 
 		&__text {
-			width: 290px;
+			max-width: 290px;
 		}
 
 		&__down {
@@ -321,6 +321,83 @@
 	}
 
 	@media (max-width: 767px) {
+		padding-top: 50px;
+		margin-bottom: 102px;
 
+		&:before {
+			top: 177px;
+			left: 0;
+			margin: 0;
+			border-width: 92px;
+		}
+
+		&__container {
+			padding: 0 30px;
+		}
+
+		&__title {
+			font-size: 45px;
+			padding-left: 0;
+			margin-bottom: 76px;
+		}
+
+		&__up {
+			margin-bottom: 74px;
+		}
+
+		&__definition {
+			float: none;
+			text-align: center;
+			margin-bottom: 66px;
+		}
+
+		&__text {
+			float: none;
+		}
+
+		&__down {
+			margin: 0 -30px;
+			padding: 22px 30px 28px;
+
+			&:before {
+				top: 284px;
+				right: -21px;
+				border-width: 72px;
+			}
+
+			&:after {
+				left: -13px;
+				margin-top: 274px;
+			}
+
+			.company {
+
+				&__text {
+					font-size: 20px;
+					line-height: 1.2em;
+					margin-bottom: 23px;
+				}
+			}
+		}
+
+		&__image {
+			height: 208px;
+			overflow: hidden;
+			margin: 0 -5px 40px;
+
+			img {
+				float: right;
+			}
+		}
+
+		&__subtitle {
+			font-size: 20px;
+			line-height: 1.2em;
+			margin-bottom: 23px;
+		}
+
+		&__signature {
+			font-size: 20px;
+		}
 	}
 }

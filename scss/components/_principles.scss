@@ -223,6 +223,12 @@
 		&__title {
 			padding: 0;
 			max-width: 580px;
+
+			&._company {
+				font-size: 30px;
+				padding-left: 0;
+				margin-bottom: 51px;
+			}
 		}
 
 		&__photo {
