@@ -85,7 +85,7 @@
 
 	&__subtitle {
 		float: left;
-		width: 400px;
+		max-width: 400px;
 		margin: 290px 0 35px;
 		@include font-fpt-medium();
 		font-size: 18px;
@@ -180,7 +180,7 @@
 
 		&__subtitle {
 			margin-top: 225px;
-			width: 350px;
+			max-width: 350px;
 		}
 
 		&__signature {
@@ -226,13 +226,13 @@
 		}
 
 		&__definition {
-			max-width: 290px;
+			max-width: 46.1783%;
 			font-size: 32px;
 			line-height: 1em;
 		}
 
 		&__text {
-			max-width: 290px;
+			max-width: 46.1783%;
 		}
 
 		&__down {
@@ -275,6 +275,7 @@
 				&__text {
 					float: none;
 					width: auto;
+					max-width: none;
 					position: relative;
 					z-index: 1;
 				}
@@ -307,7 +308,7 @@
 		&__subtitle {
 			margin: 0 0 18px;
 			float: none;
-			width: auto;
+			max-width: none;
 			@include font-gp-pro();
 			font-size: 16px;
 			line-height: 1.125em;
@@ -347,12 +348,14 @@
 
 		&__definition {
 			float: none;
+			max-width: none;
 			text-align: center;
 			margin-bottom: 66px;
 		}
 
 		&__text {
 			float: none;
+			max-width: none;
 		}
 
 		&__down {
