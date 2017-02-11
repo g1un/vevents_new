@@ -10,8 +10,8 @@ var runSequence = require('run-sequence');
 var cssnano = require('gulp-cssnano');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var cache = require('gulp-cache');
+// var imagemin = require('gulp-imagemin');
+// var cache = require('gulp-cache');
 
 gulp.task('sass', function(){
   return gulp.src('scss/style.scss')
@@ -66,17 +66,17 @@ gulp.task('reload', function(){
 });
 
 gulp.task('scripts', function() {
-    gulp.src(['js/jquery-3.0.0.min.js', 'js/slick.min.js', 'js/jquery-ui.min.js'/*, 'jquery.formstyler.js'*/, 'js/script.js'])
+    gulp.src(['js/jquery-3.0.0.min.js', 'js/slick.min.js', 'js/jquery-ui.min.js', 'js/script.js'])
         // .pipe(concat('all.js'))
         // .pipe(uglify())
         .pipe(gulp.dest('app/js'))
 });
 
-gulp.task('images', function(){
-	gulp.src('img/effects/**/*.+(png|jpg|gif|svg)')
-		.pipe(cache(imagemin()))
-		.pipe(gulp.dest('app/img/effects'))
-});
+// gulp.task('images', function(){
+// 	gulp.src('img/effects/**/*.+(png|jpg|gif|svg)')
+// 		.pipe(cache(imagemin()))
+// 		.pipe(gulp.dest('app/img/effects'))
+// });
 
 gulp.task('watch', ['browserSync', 'jade', 'sass', 'inline', 'scripts', 'svgmin'/*, 'images'*/], function(){
     gulp.watch('**/*.scss', ['sass']);
