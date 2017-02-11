@@ -209,4 +209,40 @@ $(document).ready(function() {
 		}
 	};
 	newsSwitcher.toggle();
+
+	//club form
+	var clubForm = {
+		"form": $('.js-club-form'),
+		"formOpenBtn": $('.js-club-form-open'),
+		"formCloseBtn": $('.js-club-form-close'),
+		"clubBlur": $('.js-club-blur'),
+		"run": function() {
+			var _this = this;
+			this.formOpenBtn.on('click', function(e) {
+				e.preventDefault();
+				_this.form.addClass('_show');
+				_this.form.fadeIn(300);
+				_this.clubBlur.addClass('_blur');
+				$('html').addClass('_unscroll');
+			});
+			this.formCloseBtn.on('click', function() {
+				_this.form.removeClass('_show');
+				_this.form.fadeOut(300);
+				$('html').removeClass('_unscroll');
+				_this.clubBlur.removeClass('_blur');
+			});
+		}
+	};
+	clubForm.run();
+	// var clubForm = {
+	// 	"run": function() {
+	// 		var form = $('.js-club-form');
+	// 		var formOpenBtn = $('.js-club-form-open');
+	// 		var formCloseBtn = $('.js-club-form-close');
+	// 		var clubBlur = $('.js-club-blur');
+	// 		formOpenBtn.on('click', function() {
+	//
+	// 		});
+	// 	}
+	// }
 });

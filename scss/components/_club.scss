@@ -3,6 +3,7 @@
 	height: calc(100vh - 96px);
 	padding-bottom: 48px;
 	display: flex;
+	position: relative;
 
 
 	&__left {
@@ -13,6 +14,11 @@
 		align-items: center;
 		box-sizing: border-box;
 		background: #f7f7f7;
+		transition: filter .3s;
+
+		&._blur {
+			filter: blur(10px);
+		}
 	}
 
 	&__content {
@@ -65,6 +71,21 @@
 	&__right {
 		width: 50%;
 		background: #f7f7f7 url('../img/club-bg.jpg') no-repeat center center;
+		transition: filter .3s;
+
+		&._blur {
+			filter: blur(10px);
+		}
+	}
+
+	&__form {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: calc(100vh - 96px);
+		background: rgba(255,255,255,.7);
 	}
 
 	@media (max-width: 1919px) {
@@ -147,6 +168,16 @@
 
 		&__btn-form {
 			margin-top: 51px;
+		}
+
+		&__form {
+			position: fixed;
+			top: 48px;
+			left: 0;
+			right: 0;
+			bottom: auto;
+			height: calc(100vh - 48px);
+			z-index: 1;
 		}
 	}
 
