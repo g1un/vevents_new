@@ -1,0 +1,20 @@
+doctype html
+html
+	head
+		title «V-events - Contacts»
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel='stylesheet', type='text/css', href='css/style.css')
+	body
+		include includes/frame
+		include includes/contacts
+		include includes/footer
+
+		+frame(["contacts", "footer"])
+		+contacts()
+		+footer()
+
+		script(src='js/jquery-3.0.0.min.js')
+		script(src='js/jquery-ui.min.js')
+		script(src='js/slick.min.js')
+		script(src='js/script.js')
