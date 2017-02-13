@@ -47,6 +47,15 @@
 		line-height: 1.2em;
 		margin-bottom: 25px;
 		padding: 0 30px;
+
+		a {
+			color: #ee7201;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	img {

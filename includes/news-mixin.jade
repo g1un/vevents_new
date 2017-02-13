@@ -6,29 +6,25 @@ mixin news-mixin()
 				a(href="#", data-news-btn="news-content-1").news-item._pinned.news-page__item
 					span.news-item__date january 05, 2017
 					h3.news-item__title Summer Event Forum – Event planning as a business
-					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+					p A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
 				.news-page__year 2016
-				a(href="#").news-item.news-page__item
+				a(href="#", data-news-btn="news-content-2").news-item.news-page__item
 					span.news-item__date january 05, 2016
 					h3.news-item__title Summer Event Forum – Event planning as a business
-					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
-				a(href="#").news-item._pinned.news-page__item
+					p A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+				a(href="#", data-news-btn="news-content-3").news-item._pinned.news-page__item
 					span.news-item__date january 05, 2016
 					h3.news-item__title Summer Event Forum – Event planning as a business
-					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
-				a(href="#").news-item._pinned.news-page__item
+					p A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+				a(href="#", data-news-btn="news-content-4").news-item._pinned.news-page__item
 					span.news-item__date january 05, 2016
 					h3.news-item__title Summer Event Forum – Event planning as a business
-					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
-				a(href="#").news-item.news-page__item
+					p A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+				a(href="#", data-news-btn="news-content-5").news-item.news-page__item
 					span.news-item__date january 05, 2016
 					h3.news-item__title Summer Event Forum – Event planning as a business
-					p.news-item__preview A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
-
-		//-.grid__right.js-grid-slider(data-news-container="")
-		//	.grid__slider.js-slider#news-page-slider
-
-		.grid__right.js-slider.js-grid-slider#news-page-slider
+					p A big summer business conference for professionals in the event industry - Summer Event Forum - will take place in Rostov-on-Don June 6-8. The main goal of Summer Event Forum is the networking among the industry experts from all regions of the country.
+		.grid__right.js-slider.js-grid-slider(data-news-slider='')#news-page-slider
 			each val, index in ["1", "2", "3"]
 				.grid__slide.js-slider-item
 					.slide-content.grid__slide-image(style="background-image: url(img/news-page-slide-1.jpg)")

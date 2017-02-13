@@ -14,7 +14,7 @@
 			bottom: -18px;
 			left: -37px;
 			width: 79px;
-			background: #b2fbed;
+			background: rgba(218,251,239,.7);
 		}
 	}
 
@@ -37,11 +37,20 @@
 		position: relative;
 	}
 
-	&__preview {
+	p {
 		@include font-gp-pro();
 		font-size: 14px;
 		line-height: 1.2em;
 		position: relative;
+	}
+
+	a {
+		color: #ee7201;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	&._pinned {

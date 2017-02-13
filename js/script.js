@@ -179,18 +179,34 @@ $(document).ready(function() {
 	//news switcher
 	var newsSwitcher = {
 		"btn": $('[data-news-btn]'),
+		"content": $('[data-news-content]'),
 		"newsList": $('[data-news-list]'),
 		"backBtn": $('[data-news-back]'),
+		"slider": $('[data-news-slider]'),
 		"toggle": function() {
 			var _newsList = this.newsList;
+			var _allBtns = this.btn;
+			var _allContents = this.content;
+			var _slider = this.slider;
 			this.btn.on('click', function(e) {
 				e.preventDefault();
-				$(this).toggleClass('_active');
+				var _thisBtn = $(this);
+				// $(this).toggleClass('_active');
 				var showContent = $('[data-news-content="' + $(this).attr('data-news-btn') + '"]');
-				if(!showContent.hasClass('_show')) {
+				if(!_thisBtn.hasClass('_active')) {
+					_slider.addClass('_hidden');
+					_allBtns.removeClass('_active');
+					_thisBtn.addClass('_active');
+					_allContents.removeClass('_show');
 					showContent.addClass('_show');
 					_newsList.addClass('_hidden-md');
+					if($(window).outerWidth() <= 999) {
+						// $('html, body').animate( {scrollTop: 0}, 250 );
+						$('html, body').scrollTop(0);
+					}
 				} else {
+					_slider.removeClass('_hidden');
+					_thisBtn.removeClass('_active');
 					showContent.removeClass('_show');
 					_newsList.removeClass('_hidden-md');
 				}
@@ -200,9 +216,11 @@ $(document).ready(function() {
 		"close": function() {
 			var _newsList = this.newsList;
 			var _btn = this.btn;
+			var _slider = this.slider;
 			this.backBtn.on('click', function(e) {
 				e.preventDefault();
 				_btn.removeClass('_active');
+				_slider.removeClass('_hidden');
 				_newsList.removeClass('_hidden-md');
 				$('[data-news-content="' + $(this).attr('data-news-back') + '"]').removeClass('_show');
 			});
@@ -234,15 +252,4 @@ $(document).ready(function() {
 		}
 	};
 	clubForm.run();
-	// var clubForm = {
-	// 	"run": function() {
-	// 		var form = $('.js-club-form');
-	// 		var formOpenBtn = $('.js-club-form-open');
-	// 		var formCloseBtn = $('.js-club-form-close');
-	// 		var clubBlur = $('.js-club-blur');
-	// 		formOpenBtn.on('click', function() {
-	//
-	// 		});
-	// 	}
-	// }
 });

@@ -1,23 +1,75 @@
 .nav {
-  width: 596px;
 
   &__list {
+		height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
+	&__item {
+		height: 100%;
+
+		&:hover {
+
+			.nav {
+
+				&__link {
+					background: #2fac66;
+					color: #fff;
+				}
+			}
+		}
+
+		&.active,
+		&.active:hover {
+
+			.nav {
+
+				&__link {
+					@include font-fpt-bold();
+					color: #000;
+					background: #f39200;
+				}
+			}
+		}
+
+		&._menu {
+			position: relative;
+
+			.nav {
+
+				&__list {
+					//display: none;
+					position: absolute;
+					top: 100%;
+					left: 100%;
+				}
+			}
+
+			&:hover {
+
+				.nav {
+
+					&__list {
+						display: flex;
+					}
+				}
+			}
+		}
+	}
+
   &__link {
-    display: block;
+    display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 15px;
     @include  font-fpt-medium();
     font-size: 11px;
     line-height: 1.2em;
     color: #000;
     text-decoration: none;
     text-transform: uppercase;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
 	&__close {
@@ -43,25 +95,54 @@
 		align-items: center;
 
 		&._show {
-			//display: flex;
 			display: block;
 		}
 
 		&__list {
 			display: block;
+			height: auto;
 			margin-bottom: 14vh;
 		}
 
 		&__item {
 			display: block;
+			height: auto;
 			margin-bottom: 27px;
 
 			&:last-child {
 				margin-bottom: 0;
 			}
+
+			&:hover {
+
+				.nav {
+
+					&__link {
+						background: transparent;
+						text-decoration: underline;
+					}
+				}
+			}
+
+			&.active,
+			&.active:hover {
+
+				.nav {
+
+					&__link {
+						@include font-fpt-book();
+						color: #fff;
+						background: transparent;
+						text-decoration: underline;
+					}
+				}
+			}
 		}
 
 		&__link {
+			display: block;
+			height: auto;
+			padding: 0;
 			@include font-fpt-book();
 			font-size: 26px;
 			line-height: 1.2em;

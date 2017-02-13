@@ -10,8 +10,13 @@ mixin frame(pageNav)
 				.close.nav__close.js-close
 				ul.nav__list
 					each val in ["Company", "Portfolio", "V-events club", "V-events univercity", "Blog", "Contacts"]
-						li.nav__item
+						li(class="nav__item#{val=='Portfolio' ? ' _menu' : ''}")
 							a(href="#").nav__link!= val
+							//-if val == 'Portfolio'
+								ul.nav__list
+									each val in ["Corporate events", "Special events", "Trade events"]
+										li.nav__item
+											a(href="#").nav__link!= val
 				.lang._nav.nav__lang
 					img(src="img/svg/flag-white.png")
 					a(href="#").lang__item._ru._show Russian
@@ -23,9 +28,10 @@ mixin frame(pageNav)
 								a(href="#", class="social__link _#{val}")
 									img(src="img/svg/#{val}.svg")
 			.lang.header__lang
-				img(src="img/svg/flag.png")
-				a(href="#").lang__item._ru._show Russian
-				a(href="#").lang__item._en Английский
+				.lang__container
+					img(src="img/svg/flag.svg")
+					a(href="#").lang__item._ru._show Russian
+					a(href="#").lang__item._en Английский
 			.sandwich.header__sandwich(data-open-btn="nav")
 		.social
 			ul.social__list
