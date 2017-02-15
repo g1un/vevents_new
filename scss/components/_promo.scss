@@ -38,10 +38,13 @@
 
   &__person {
 		margin-bottom: 20px;
-		padding-left: 23px;
 		@include font-fpt-medium();
 		font-size: 15px;
 		line-height: 1em;
+
+		span {
+			padding: 2px 5px;
+		}
   }
 
   &__slogan {
@@ -51,7 +54,7 @@
 		text-transform: uppercase;
 
 		span {
-			padding: 5px 10px 5px 23px;
+			padding: 2px 5px;
 			display: inline-block;
 			vertical-align: top;
 			background: #fff;
@@ -109,9 +112,9 @@
 			font-size: 56px;
 			line-height: 54px;
 
-			span {
-				padding: 2px 15px;
-			}
+			//span {
+			//	padding: 2px 15px;
+			//}
 		}
 	}
 
@@ -129,11 +132,10 @@
 		&__person {
 			padding: 0;
 
-			span {
-				padding: 0 18px;
-				line-height: 22px;
-				background: #fff;
-			}
+			//span {
+			//	padding: 0 18px;
+			//	line-height: 22px;
+			//}
 		}
 	}
 
@@ -188,7 +190,7 @@
 			padding: 0;
 
 			span {
-				padding: 0 15px;
+				//padding: 0 8px;
 				line-height: 22px;
 				background: #fff;
 			}
@@ -198,9 +200,9 @@
 			font-size: 34px;
 			line-height: 34px;
 
-			span {
-				padding: 2px 8px;
-			}
+			//span {
+			//	padding: 2px 8px;
+			//}
 		}
 
 		&__ornament {
