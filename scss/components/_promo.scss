@@ -152,6 +152,31 @@
 		}
 	}
 
+	@media (max-width: 999px) and (orientation: portrait) {
+		height: auto;
+
+		&__item {
+			height: auto;
+
+			&:before {
+				content: '';
+				display: block;
+				width: 100%;
+				padding-top: 86.54354%;
+			}
+		}
+
+		&__image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: -1;
+			height: auto;
+			width: 100%;
+		}
+	}
+
 	@media (max-width: 767px) {
 
 		&__inner {
