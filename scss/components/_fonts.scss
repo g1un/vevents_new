@@ -21,6 +21,17 @@
 }
 
 @font-face {
+	font-family: RistrettoPro-Reg;
+	src: url(../fonts/ristrettopro-reg.woff2),
+		 url(../fonts/ristrettopro-reg.woff);
+	font-weight: normal;
+}
+
+@mixin font-rp-reg() {
+	font-family: RistrettoPro-Reg, sans-serif;
+}
+
+@font-face {
 	font-family: FuturaPTBook;
 	src: url(../fonts/FuturaPTBook.woff2),
 		 url(../fonts/FuturaPTBook.woff);

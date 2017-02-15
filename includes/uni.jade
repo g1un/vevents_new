@@ -1,0 +1,63 @@
+mixin uni()
+	.uni.js-blur#uni
+		.uni__container.clearfix
+			h2.uni__title Event univercity
+			.uni__up.clearfix
+				h3.uni__definition V-events University is an education platform created for event specialists who organize and hold events of different formats.
+				p.uni__text._right Our listeners are project managers, producers, scriptwriters, HR directors, heads of PR and marketing departments who work for the biggest Russian companies and international brands represented in Russia.
+				p.uni__text._right Within the custom-designed educational programs and units V-events specialists share with the listeners the experiences in holding events, the methodology of project organization, analyze different cases of the executed projects and learn about the up-to-date instruments and technologies in the event sphere. This is the platform where a customer and a doer can meet, the place where you can share experience, communicate and find the truth.
+			.uni__image
+				img(src='img/uni-image-1.jpg', alt='')
+			.uni__programs
+				h3.uni__programs-title In September 2015 V-events University launches a series of educational<br> seminars on the following subjects:
+				ul.uni__programs-list
+					-
+						var uniPrograms = [
+							{
+								"title": "Modern tendencies in corporate events. International experience and Russian analogues or the secrets of an ideal event.",
+								"desc": "Listeners: HR directors, HR managers."
+							},
+							{
+								"title": "Stage production in the event sphere. Theory and practice. International experience or why do we fail to make it?",
+								"desc": "Listeners: creative agencies directors, producers, scriptwriters."
+							},
+							{
+								"title": "Multimedia technologies at the event or how to surprise your guests. Market overview, demonstration of the only multimedia showroom in the Northwestern region.",
+								"desc": "Listeners: HR directors, HR managers, creative agencies directors, producers, scriptwriters"
+							},
+							{
+								"title": "Service in the event sphere. Secrets of ideal relations with clients.",
+								"desc": "Listeners: project managers."
+							}
+						]
+					each val in uniPrograms
+						li.uni-program
+							h4.uni-program__title!= val.title
+							p.uni-program__desc!= val.desc
+				.uni__btn
+					a(href="#").btn.js-form-open fill out the form
+				p.uni__programs-desc For detailed information on educational programs, <br>please contact us: (812) 924-63-26.
+	.form.js-form
+		.form__close.js-form-close
+		.form__container
+			form(action='#', method='get').form__wrapper
+				.form__title The application form
+				.form__control
+					label(for='patronymic').form__label Patronymic
+					input(type='text', name='patronymic', id='patronymic').form__input
+				.form__control
+					label(for='company').form__label Company
+					input(type='text', name='company', id='company').form__input
+				.form__control
+					label(for='position').form__label Position
+					input(type='text', name='position', id='position').form__input
+				.form__control
+					label(for='telephone').form__label Telephone
+					input(type='tel', name='telephone', id='telephone').form__input
+				.form__control
+					label(for='e-mail').form__label E-mail
+					input(type='text', name='e-mail', id='e-mail').form__input
+				.form__control
+					label(for='comment').form__label Комментарий
+					textarea(name='comment', id='comment').form__textarea
+				input(type='submit', name='submit', id='submit', value='send').btn.form__submit

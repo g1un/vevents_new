@@ -18,6 +18,11 @@ body {
 
 html {
 
+	&._unscroll-md {
+		height: 100%;
+		overflow: hidden;
+	}
+
 	@media (max-width: 999px) {
 
 		&._unscroll {

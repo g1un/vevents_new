@@ -1,36 +1,33 @@
 mixin club()
-	.club#club
-		.club__left.js-club-blur
+	.club.js-blur#club
+		.club__left
 			.club__content
 				h2.club__title V-events club
 				p V-events club is a club of our company’s clients, whose members have V-events club card. Any of our clients who is given this personalized ID card can become a member. This card enables you to visit all V-events University projects, special events with sophisticated international speakers, artists, event sphere experts and many other things.
 				.club__content-image
 					img(src='img/club-bg.jpg', alt='club')
 				p #[b For further information] on the card obtainment conditions, please contact us: #[a(href='tel:924-63-26') 924-63-26].
-				a(href='#').btn.club__btn-form.js-club-form-open Fill out the form
-		.club__right.js-club-blur
-		.club__form.form.js-club-form
-			.form__close.js-club-form-close
-			.form__container
-				form(action='#', method='get').form__wrapper
-					.form__title The application form
-					.form__control
-						label(for='patronymic').form__label Patronymic
-						input(type='text', name='patronymic', id='patronymic').form__input
-					.form__control
-						label(for='company').form__label Company
-						input(type='text', name='company', id='company').form__input
-					.form__control
-						label(for='position').form__label Position
-						input(type='text', name='position', id='position').form__input
-					.form__control
-						label(for='telephone').form__label Telephone
-						input(type='tel', name='telephone', id='telephone').form__input
-					.form__control
-						label(for='e-mail').form__label E-mail
-						input(type='tel', name='e-mail', id='e-mail').form__input
-					input(type='submit', name='submit', id='submit', value='send').btn.form__submit
-					p.form__text After processing this data your personalized ID card will bedelivered to you by Business development director.
-
-
-
+				a(href='#').btn.club__btn-form.js-form-open Fill out the form
+		.club__right
+	.form.js-form
+		.form__close.js-form-close
+		.form__container
+			form(action='#', method='get').form__wrapper
+				.form__title The application form
+				.form__control
+					label(for='patronymic').form__label Patronymic
+					input(type='text', name='patronymic', id='patronymic').form__input
+				.form__control
+					label(for='company').form__label Company
+					input(type='text', name='company', id='company').form__input
+				.form__control
+					label(for='position').form__label Position
+					input(type='text', name='position', id='position').form__input
+				.form__control
+					label(for='telephone').form__label Telephone
+					input(type='tel', name='telephone', id='telephone').form__input
+				.form__control
+					label(for='e-mail').form__label E-mail
+					input(type='text', name='e-mail', id='e-mail').form__input
+				input(type='submit', name='submit', id='submit', value='send').btn.form__submit
+				p.form__text After processing this data your personalized ID card will bedelivered to you by Business development director.
