@@ -176,6 +176,40 @@ $(document).ready(function() {
 	asideNav.run();
 	asideNav.navTo();
 
+	//scrollUp link
+	var scrollUp = {
+		"link": $('.js-scrollup'),
+		"run": function() {
+			var _this = this;
+			_this.link.on('click', function(e) {
+				e.preventDefault();
+			});
+			$(window).scroll(function() {
+				if($(window).scrollTop() + $(window).height() == $(document).height()) {
+					if(!_this.link.hasClass('_scrollup')) {
+						_this.link.addClass('_scrollup');
+						_this.link.text('Scroll Up');
+						_this.link.on('click', function() {
+							$('html, body').animate(
+								{scrollTop: 0}, $(document).height() / 2
+							);
+						});
+					}
+				} else {
+					if(_this.link.hasClass('_scrollup')) {
+						_this.link.removeClass('_scrollup');
+						_this.link.text('Scroll Down');
+						_this.link.off('click');
+						_this.link.on('click', function(e) {
+							e.preventDefault();
+						});
+					}
+				}
+			});
+		}
+	};
+	scrollUp.run();
+
 	//news switcher
 	var newsSwitcher = {
 		"btn": $('[data-news-btn]'),
