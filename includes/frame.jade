@@ -12,11 +12,11 @@ mixin frame(pageNav)
 					each val in ["Company", "Portfolio", "V-events club", "V-events univercity", "Blog", "Contacts"]
 						li(class="nav__item#{val=='Portfolio' ? ' _menu' : ''}")
 							a(href="#").nav__link!= val
-							//-if val == 'Portfolio'
+							if val == 'Portfolio'
 								ul.nav__list
 									each val in ["Corporate events", "Special events", "Trade events"]
 										li.nav__item
-											a(href="#").nav__link!= val
+											a(href="#", title='#{val}').nav__link!= val
 				.lang._nav.nav__lang
 					img(src="img/svg/flag.svg")
 					a(href="#").lang__item._ru._show Russian

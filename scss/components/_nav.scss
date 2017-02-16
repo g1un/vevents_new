@@ -40,10 +40,36 @@
 			.nav {
 
 				&__list {
-					//display: none;
+					display: none;
 					position: absolute;
 					top: 100%;
-					left: 100%;
+					left: 0;
+
+					.nav {
+
+						&__link {
+							flex-direction: column;
+							justify-content: center;
+							color: #000;
+
+							&:after {
+								content: attr(title);
+								display: block;
+								@include font-fpt-bold();
+								color: transparent;
+								white-space: nowrap;
+								height: 1px;
+								overflow: hidden;
+								visibility: hidden;
+								margin-bottom: -1px;
+							}
+
+							&:hover {
+								@include font-fpt-bold();
+								color: #fff;
+							}
+						}
+					}
 				}
 			}
 
@@ -135,6 +161,42 @@
 						color: #fff;
 						background: transparent;
 						text-decoration: underline;
+					}
+				}
+			}
+
+			&._menu,
+			&._menu:hover {
+
+				.nav {
+
+					&__list {
+						display: block;
+						position: static;
+						margin-bottom: 0;
+
+						.nav {
+
+							&__item {
+								margin-bottom: 20px;
+
+								&:first-child {
+									margin-top: 20px;
+								}
+							}
+
+							&__link {
+								@include font-fpt-book();
+								font-size: 22px;
+								color: #fff;
+								text-decoration: none;
+
+								&:hover,
+								&._active {
+									text-decoration: underline;
+								}
+							}
+						}
 					}
 				}
 			}
