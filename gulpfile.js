@@ -10,6 +10,7 @@ var runSequence = require('run-sequence');
 var cssnano = require('gulp-cssnano');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var del = require('del');
 // var imagemin = require('gulp-imagemin');
 // var cache = require('gulp-cache');
 
@@ -72,13 +73,17 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('app/js'))
 });
 
+gulp.task('clean:js', function() {
+	return del.sync('app/js');
+});
+
 // gulp.task('images', function(){
 // 	gulp.src('img/effects/**/*.+(png|jpg|gif|svg)')
 // 		.pipe(cache(imagemin()))
 // 		.pipe(gulp.dest('app/img/effects'))
 // });
 
-gulp.task('watch', ['browserSync', 'jade', 'sass', 'inline', 'scripts', 'svgmin'/*, 'images'*/], function(){
+gulp.task('watch', ['clean:js', 'browserSync', 'jade', 'sass', 'inline', 'scripts', 'svgmin'/*, 'images'*/], function(){
     gulp.watch('**/*.scss', ['sass']);
     // gulp.watch('img/effects/**/*.+(png|jpg|gif|svg)', ['images']);
     gulp.watch('**/*.jade', function() {
