@@ -66,9 +66,9 @@ gulp.task('reload', function(){
 });
 
 gulp.task('scripts', function() {
-    gulp.src(['js/jquery-3.0.0.min.js', 'js/slick.min.js', 'js/jquery-ui.min.js', 'js/script.js'])
+    gulp.src(['js/*.js'])
         // .pipe(concat('all.js'))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('app/js'))
 });
 

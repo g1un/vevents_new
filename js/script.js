@@ -289,4 +289,19 @@ $(document).ready(function() {
 		}
 	};
 	formPopup.run();
+
+	//Parallax
+	// init controller
+	var controller = new ScrollMagic.Controller();
+	// build tween
+	var tween = new TimelineMax()
+		.add([
+			TweenMax.to('#parallax span:nth-child(2n)', 1, {y: 200}),
+			TweenMax.to('#parallax span:nth-child(2n+1)', 1, {y: 300})
+		]);
+	// build scenes
+	var scene = new ScrollMagic.Scene({triggerElement: "#parallax", duration: $('#parallax').height()})
+		.setTween(tween)
+		// .addIndicators() //debugging
+		.addTo(controller);
 });
