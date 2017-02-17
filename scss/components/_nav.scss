@@ -167,8 +167,17 @@
 
 			&._menu,
 			&._menu:hover {
+				background: #379e33;
+				padding-top: 10px;
+				padding-bottom: 17px;
 
 				.nav {
+
+					&__link {
+						font-size: 18px;
+						line-height: 32px;
+						letter-spacing: .38em;
+					}
 
 					&__list {
 						display: block;
@@ -183,11 +192,16 @@
 								&:first-child {
 									margin-top: 20px;
 								}
+
+								&:last-child {
+									margin-bottom: 0;
+								}
 							}
 
 							&__link {
 								@include font-fpt-book();
-								font-size: 22px;
+								font-size: 26px;
+								letter-spacing: 0;
 								color: #fff;
 								text-decoration: none;
 
