@@ -82,6 +82,22 @@
 					}
 				}
 			}
+
+			&.active {
+
+				.nav {
+
+					&__list {
+
+						.nav {
+
+							&__link:not(:hover) {
+								@include font-fpt-medium();
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -208,6 +224,22 @@
 								&:hover,
 								&._active {
 									text-decoration: underline;
+								}
+							}
+						}
+					}
+				}
+
+				&.active {
+
+					.nav {
+
+						&__list {
+
+							.nav {
+
+								&__link:not(:hover) {
+									@include font-fpt-book();
 								}
 							}
 						}
