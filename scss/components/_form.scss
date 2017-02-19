@@ -65,6 +65,36 @@
 
 	&__control {
 		margin-bottom: 12px;
+
+		&._checkbox {
+			margin-bottom: 55px;
+		}
+
+		.has-error {
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+
+			.form {
+
+				&__input,
+				&__textarea {
+					border-color: #e94100;
+				}
+			}
+		}
+
+		.help-block {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 100%;
+			margin-left: 35px;
+			@include font-fpt-book();
+			font-size: 14px;
+			line-height: 1.2em;
+			color: #ea4201;
+		}
 	}
 
 	&__label {
@@ -102,8 +132,6 @@
 
 	&__textarea {
 		display: block;
-		max-width: 306px;
-		width: 100%;
 		margin: 10px auto 0;
 		border: 1px solid #c6c6c6;
 		min-height: 78px;
@@ -117,21 +145,20 @@
 		}
 	}
 
+	&__text {
+		margin: 75px auto 55px;
+		max-width: 330px;
+		@include font-fpt-book();
+		font-size: 14px;
+		line-height: 18px;
+	}
+
 	&__submit {
-		margin-top: 62px;
 		min-width: 86px;
 		border: none;
 		outline: none;
 		padding-top: 12px;
 		padding-bottom: 12px;
-	}
-
-	&__text {
-		margin: 25px auto 0;
-		max-width: 330px;
-		@include font-fpt-book();
-		font-size: 14px;
-		line-height: 18px;
 	}
 
 	@media (max-width: 1919px) {
@@ -174,13 +201,9 @@
 			margin-bottom: 28px;
 		}
 
-		&__submit {
-			margin-top: 18px;
-		}
-
-		&__text {
-			margin-top: 14px;
-		}
+		//&__text {
+		//	margin-top: 14px;
+		//}
 	}
 
 	@media (max-width: 999px) {
@@ -195,8 +218,7 @@
 
 		&__wrapper {
 			max-width: 420px;
-			padding-bottom: 120px;
-			position: relative;
+			padding-bottom: 20px;
 		}
 
 		&__title {
@@ -205,29 +227,23 @@
 		}
 
 		&__submit {
-			margin-top: 0;
 			font-size: 30px;
 			padding-top: 13px;
 			padding-bottom: 14px;
 			min-width: 130px;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			bottom: 0;
 		}
 
 		&__text {
 			max-width: 100%;
 			font-size: 20px;
 			line-height: 24px;
-			margin-top: 165px;
 		}
 	}
 
 	@media (max-width: 767px) {
 
 		&__wrapper {
-			padding: 0 25px 150px;
+			padding: 0 25px 20px;
 		}
 
 		&__title {
@@ -235,8 +251,8 @@
 			margin-bottom: 68px;
 		}
 
-		&__text {
-			margin-top: 130px;
+		.help-block {
+			display: none;
 		}
 	}
 }
