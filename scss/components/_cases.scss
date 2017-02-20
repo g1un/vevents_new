@@ -44,6 +44,10 @@
 				height: 8px;
 				margin-right: 10px;
 
+				&:last-child {
+					margin-right: 0;
+				}
+
 				&.slick-active {
 					background: #3aaa35;
 				}
@@ -321,6 +325,10 @@
 				width: 7px;
 				height: 7px;
 				margin-right: 7px;
+
+				&:last-child {
+					margin-right: 0;
+				}
 
 				&.slick-active {
 					background: #3aaa35;

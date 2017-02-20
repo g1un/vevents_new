@@ -9,17 +9,11 @@
 		width: 50%;
 		min-height: calc(100vh - 96px);
 		background: #f4f4f4;
-		//overflow: auto;
 	}
 
 	&__content {
 		width: 100%;
-		//min-height: 100%;
 		padding: 145px 0;
-		//display: flex;
-		//justify-content: center;
-		//align-items: center;
-		//flex-direction: column;
 		text-align: center;
 
 		h2 {
@@ -133,7 +127,6 @@
 
 	&__slider {
 		width: calc(50% - 48px);
-		//height: calc(100vh - 48px);
 		position: fixed;
 		top: 48px;
 		bottom: 48px;
@@ -169,6 +162,10 @@
 				width: 8px;
 				height: 8px;
 				margin-right: 10px;
+
+				&:last-child {
+					margin-right: 0;
+				}
 				
 				&.slick-active {
 					background: #3aaa35;
@@ -276,6 +273,10 @@
 				width: 7px;
 				height: 7px;
 				margin-right: 7px;
+
+				&:last-child {
+					margin-right: 0;
+				}
 
 				&.slick-active {
 					background: #3aaa35;
