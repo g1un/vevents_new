@@ -5,7 +5,6 @@ $(document).ready(function() {
 		"container": function(sliderId) {
 			return $(sliderId);
 		},
-		// "item": $(".js-slider-item"),
 		"options": function(sliderId, optionsType) {
 			if(optionsType == 'case') {
 				return {
@@ -16,7 +15,6 @@ $(document).ready(function() {
 					responsive: [{
 						breakpoint: 601,
 						settings: {
-							// dots: true,
 							arrows: false
 						}
 					}]
@@ -24,7 +22,6 @@ $(document).ready(function() {
 			} else {
 				return {
 					slide: sliderId + " .js-slider-item",
-					// appendArrows: sliderId + " .js-slider-nav",
 					prevArrow: '<button type="button" class="slider-nav _prev"></button>',
 					nextArrow: '<button type="button" class="slider-nav _next"></button>',
 					responsive: [{
@@ -137,10 +134,31 @@ $(document).ready(function() {
 			$(window).resize(function() {
 				_action();
 			})
+		},
+
+		//arrows
+		"arrowing": function() {
+			var _slider = this.slider;
+			if(_slider.length) {
+				$(document).keydown(function(e) {
+					switch(e.which) {
+						case 37: // left
+							_slider.slick('slickPrev');
+							break;
+
+						case 39: // right
+							_slider.slick('slickNext');
+							break;
+
+						default: return; // exit this handler for other keys
+					}
+				});
+			}
 		}
 	};
 	caseSlider.action();
 	caseSlider.resize();
+	caseSlider.arrowing();
 
 	//aside navigation
 	var asideNav = {
