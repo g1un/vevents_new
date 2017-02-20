@@ -54,6 +54,23 @@ $(document).ready(function() {
 		appendTo: '.js-select'
 	});
 
+	//main page select (list hiding/showing)
+	var selectCases = {
+		"select": $('[data-cases-select]'),
+		"cases": $('[data-cases-list]'),
+		"switch": function() {
+			var _this = this;
+			$('[data-cases-list="' + select.val() + '"]').show();
+			_this.select.selectmenu({
+				change: function( event, data ) {
+					_this.cases.hide();
+					$('[data-cases-list="' + data.item.value + '"]').show();
+				}
+			});
+		}
+	};
+	selectCases.switch();
+
 	//close button action
 	var close = {
 		"closeBtn": $('.js-close'),
@@ -290,17 +307,19 @@ $(document).ready(function() {
 	formPopup.run();
 
 	//Parallax
-	// init controller
-	var controller = new ScrollMagic.Controller();
-	// build tween
-	var tween = new TimelineMax()
-		.add([
-			TweenMax.to('#parallax span:nth-child(2n)', 1, {y: 200}),
-			TweenMax.to('#parallax span:nth-child(2n+1)', 1, {y: 300})
-		]);
-	// build scenes
-	var scene = new ScrollMagic.Scene({triggerElement: "#parallax", duration: $('#parallax').height()})
-		.setTween(tween)
-		// .addIndicators() //debugging
-		.addTo(controller);
+	if($('#parallax').length) {
+		// init controller
+		var controller = new ScrollMagic.Controller();
+		// build tween
+		var tween = new TimelineMax()
+			.add([
+				TweenMax.to('#parallax span:nth-child(2n)', 1, {y: 200}),
+				TweenMax.to('#parallax span:nth-child(2n+1)', 1, {y: 300})
+			]);
+		// build scenes
+		var scene = new ScrollMagic.Scene({triggerElement: "#parallax", duration: $('#parallax').height()})
+			.setTween(tween)
+			// .addIndicators() //debugging
+			.addTo(controller);
+	}
 });

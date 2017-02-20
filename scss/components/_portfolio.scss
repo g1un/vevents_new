@@ -13,7 +13,9 @@
 	}
 
 	&__list {
+		display: none;
 		font-size: 0;
+		text-align: left;
 	}
 
 	&__item {
@@ -103,8 +105,7 @@
 		}
 
 		&__more {
-			display: inline-block;
-			vertical-align: top;
+			display: block;
 			margin-top: 65px;
 			text-align: center;
 		}

@@ -2,21 +2,35 @@ include ../includes/content-title
 
 mixin portfolio()
 	.portfolio#portfolio
-		//-.portfolio__select
-		//-	span Corporate events
 		.select.portfolio__select.js-select
 			+content-title('Portfolio')
-			select(name="portfolio-select")
-				option(value='0') Corporate events
-				option(value='1') Special events
-				option(value='2') Trade events
-		.portfolio__list
-			-var i = 0
-			while i < 10
-				a(href='#').portfolio__item
-					img(src="img/portfolio-item-img-#{i}.jpg")
-					.portfolio__item-title The evening<br>in lion palace
-						span show
-				-i++
-		.portfolio__more
-			+btn-more('Move to portfolio')
+			select(name="portfolio-select", data-cases-select='')
+				option(value='Corporate events', selected) Corporate events
+				option(value='Special events') Special events
+				option(value='Trade events') Trade events
+		-
+			var lists = [
+				{
+					"title": "Corporate events",
+					"mixer": 10
+				},
+				{
+					"title": "Special events",
+					"mixer": 7
+				},
+				{
+					"title": "Trade events",
+					"mixer": 4
+				}
+			]
+		each val in lists
+			.portfolio__list(data-cases-list='#{val.title}')
+				-var i = 9
+				while i >= 0
+					a(href='#').portfolio__item
+						img(src="img/portfolio-item-img-#{9 - (i%val.mixer)}.jpg")
+						.portfolio__item-title The evening<br>in lion palace
+							span show
+					-i--
+				.portfolio__more
+					+btn-more('Move to portfolio')
