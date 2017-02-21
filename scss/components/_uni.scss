@@ -42,10 +42,15 @@
 		float: left;
 		max-width: 400px;
 		@include font-fpt-book();
-		font-size: 44px;
-		line-height: .866em;
+		font-size: 30px;
+		line-height: 1em;
 		font-weight: 400;
 		text-transform: uppercase;
+
+		b {
+			@include font-fpt-medium();
+			font-weight: 400;
+		}
 	}
 
 	&__text {
@@ -100,6 +105,11 @@
 			line-height: 1.2em;
 			text-transform: uppercase;
 			text-align: center;
+
+			a {
+				color: #000;
+				text-decoration: none;
+			}
 		}
 	}
 
@@ -147,9 +157,8 @@
 		}
 
 		&__definition {
+			font-size: 20px;
 			max-width: 46.1783%;
-			font-size: 32px;
-			line-height: 1em;
 		}
 
 		&__text {
