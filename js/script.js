@@ -19,6 +19,20 @@ $(document).ready(function() {
 						}
 					}]
 				}
+			} else if(optionsType == 'news') {
+				return {
+					slide: sliderId + " .js-slider-item",
+					prevArrow: '<div class="slider-nav _prev js-slider-prev"><p></p></div>',
+					nextArrow: '<div class="slider-nav _next js-slider-next"><p></p></div>',
+					fade: true,
+					responsive: [{
+						breakpoint: 601,
+						settings: {
+							dots: true,
+							arrows: false
+						}
+					}]
+				}
 			} else {
 				return {
 					slide: sliderId + " .js-slider-item",
@@ -40,7 +54,7 @@ $(document).ready(function() {
 	};
 
 	slider.run('#promo');
-	slider.run('#news-slider');
+	slider.run('#news-slider', 'news');
 	slider.run('#case-slider', 'case');
 	slider.run('#cases-slider', 'case');
 	slider.run('#news-page-slider', 'case');
@@ -56,8 +70,14 @@ $(document).ready(function() {
 				var prev = _this.slider.find('.js-slider-prev');
 				var next = _this.slider.find('.js-slider-next');
 				var _currentSlide = _slider.find('.js-slider-item.slick-active');
-				var _prevSlideText = _currentSlide.prev().find('h4').text();
-				var _nextSlideText = _currentSlide.next().find('h4').text();
+				var slides = _currentSlide.parent().find('.js-slider-item');
+				var slidesLength = slides.length;
+				var _prevSlide = _currentSlide.prev();
+				var _nextSlide = _currentSlide.next();
+
+				//if prev/next exist
+				var _prevSlideText = _prevSlide.length ? _prevSlide.find('h4').text() : $(slides[slidesLength - 1]).find('h4').text();
+				var _nextSlideText = _nextSlide.length ? _nextSlide.find('h4').text() : $(slides[0]).find('h4').text();
 
 				_prevSlideText = _prevSlideText.split(' ');
 				prev.find('p').empty();
