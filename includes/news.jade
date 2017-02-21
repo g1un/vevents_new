@@ -4,11 +4,11 @@ include ../includes/btn-more
 mixin news(newsList)
 	.news#news
 		+content-title('Industry News').news__title
-		.news__list#news-slider.js-slider
+		.news__list#news-slider.js-slider.js-slider-arrow-names
 			each val in newsList
 				.news__item.js-slider-item
 					.news__text.news__container
-						h4 Eventex – platform<br>for expertise raising
+						h4 #{val} <br>Eventex – platform <br>for expertise raising
 						p 6th International conference Eventex, for professionals in special events industry, will be held in Sofia from March 16 to March 18. As part of the conference, the best projects and companies of the “live communication” industry will be presented with awards during the Grand ceremony. Link for registration: <a href="#">http://eventex.co/register-awards/</a>
 					.news__image
 						img(src="img/industry-news-img-1.png", alt="industry-news-img-1")

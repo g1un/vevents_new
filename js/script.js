@@ -22,8 +22,8 @@ $(document).ready(function() {
 			} else {
 				return {
 					slide: sliderId + " .js-slider-item",
-					prevArrow: '<button type="button" class="slider-nav _prev"></button>',
-					nextArrow: '<button type="button" class="slider-nav _next"></button>',
+					prevArrow: '<div class="slider-nav _prev js-slider-prev"><p></p></div>',
+					nextArrow: '<div class="slider-nav _next js-slider-next"><p></p></div>',
 					responsive: [{
 						breakpoint: 601,
 						settings: {
@@ -44,6 +44,41 @@ $(document).ready(function() {
 	slider.run('#case-slider', 'case');
 	slider.run('#cases-slider', 'case');
 	slider.run('#news-page-slider', 'case');
+
+	//slider arrows with names
+	var namedArrows = {
+		"slider": $('.js-slider-arrow-names'),
+		"naming": function() {
+			var _this = this;
+			var _slider = _this.slider;
+
+			var appendText = function() {
+				var prev = _this.slider.find('.js-slider-prev');
+				var next = _this.slider.find('.js-slider-next');
+				var _currentSlide = _slider.find('.js-slider-item.slick-active');
+				var _prevSlideText = _currentSlide.prev().find('h4').text();
+				var _nextSlideText = _currentSlide.next().find('h4').text();
+
+				_prevSlideText = _prevSlideText.split(' ');
+				prev.find('p').empty();
+				$.each(_prevSlideText, function(i, v) {
+					prev.find('p').append($('<span>').text(v));
+				});
+
+				_nextSlideText = _nextSlideText.split(' ');
+				next.find('p').empty();
+				$.each(_nextSlideText, function(i, v) {
+					next.find('p').append($('<span>').text(v));
+				});
+			};
+			appendText();
+
+			_slider.on('afterChange breakpoint', function(event, slick, currentSlide, nextSlide, breakpoint){
+				appendText();
+			});
+		}
+	};
+	namedArrows.naming();
 
 	//select
 	var select = $('.js-select select');
