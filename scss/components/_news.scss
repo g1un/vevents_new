@@ -232,38 +232,18 @@
 				right: -17px;
 			}
 		}
-	}
-
-	@media (max-width: 600px) {
 
 		.slick-dots {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
 			bottom: 70px;
-			font-size: 0;
 
 			li {
-				display: inline-block;
-				vertical-align: top;
 				margin-right: 4px;
 				width: 7px;
 				height: 7px;
 				border: 1px solid #000;
-				border-radius: 50%;
-				background: #fff;
-				cursor: pointer;
 
 				&:last-child {
 					margin-right: 0;
-				}
-
-				button {
-					display: none;
-				}
-
-				&.slick-active {
-					background: #000;
 				}
 			}
 		}

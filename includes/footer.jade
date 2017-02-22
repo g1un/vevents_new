@@ -8,7 +8,8 @@ mixin footer()
 				'ABOUT <br>V-EVENTS <br>UNIVERSITY'
 			]
 		each val, index in footerList
-			a(href='#', style="background-image: url('img/footer-img-#{index}.jpg')").footer__item
+			a(href='#').footer__item
+				.footer__item-bg(style="background-image: url('img/footer-img-#{index}.jpg')")
 				h4!= val
 					span know more
 

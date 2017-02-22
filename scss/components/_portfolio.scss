@@ -23,10 +23,19 @@
 		vertical-align: top;
 		width: 20%;
 		text-decoration: none;
+		overflow: hidden;
 		position: relative;
 
 		img {
 			width: 100%;
+			transition: transform .5s;
+		}
+
+		&:hover {
+
+			img {
+				transform: scale(1.1);
+			}
 		}
 
 		&-title {
@@ -36,6 +45,7 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
+			padding: 30px;
 			@include font-fpt-medium();
 			font-size: 26px;
 			color: #fff;
