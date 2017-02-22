@@ -1,7 +1,7 @@
 include ../includes/content-title
 
 mixin portfolio()
-	.portfolio#portfolio
+	.portfolio#portfolio(class=attributes.class)
 		.select.portfolio__select.js-select
 			+content-title('Portfolio')
 			select(name="portfolio-select", data-cases-select='')

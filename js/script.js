@@ -394,4 +394,17 @@ $(document).ready(function() {
 			// .addIndicators() //debugging
 			.addTo(controller);
 	}
+
+	//scrollReveal
+	if($('.js-sr:not(.footer):not(.principles)').length) {
+		window.sr = ScrollReveal().reveal(
+			'.js-sr',
+			{
+				mobile: false,
+				distance: '100px',
+				scale: 1,
+				viewFactor: 0.1
+			}
+		);
+	}
 });

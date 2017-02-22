@@ -1,5 +1,5 @@
 mixin promo(id, slides)
-	.promo
+	.promo(class=attributes.class)
 		.promo__list.js-slider(id="#{id}")
 			each val in slides
 				.promo__item.js-slider-item
