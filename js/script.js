@@ -60,45 +60,88 @@ $(document).ready(function() {
 	slider.run('#news-page-slider', 'case');
 
 	//slider arrows with names
-	var namedArrows = {
-		"slider": $('.js-slider-arrow-names'),
-		"naming": function() {
-			var _this = this;
-			var _slider = _this.slider;
+	// var namedArrows = {
+	// 	"slider": $('.js-slider-arrow-names'),
+	// 	"naming": function() {
+	// 		var _this = this;
+	// 		var _slider = _this.slider;
+	//
+	// 		var appendText = function() {
+	// 			var prev = _this.slider.find('.js-slider-prev');
+	// 			var next = _this.slider.find('.js-slider-next');
+	// 			var _currentSlide = _slider.find('.js-slider-item.slick-active');
+	// 			var slides = _currentSlide.parent().find('.js-slider-item');
+	// 			var slidesLength = slides.length;
+	// 			var _prevSlide = _currentSlide.prev();
+	// 			var _nextSlide = _currentSlide.next();
+	//
+	// 			//if prev/next exist
+	// 			var _prevSlideText = _prevSlide.length ? _prevSlide.find('h4').text() : $(slides[slidesLength - 1]).find('h4').text();
+	// 			var _nextSlideText = _nextSlide.length ? _nextSlide.find('h4').text() : $(slides[0]).find('h4').text();
+	//
+	// 			_prevSlideText = _prevSlideText.split(' ');
+	// 			prev.find('p').empty();
+	// 			$.each(_prevSlideText, function(i, v) {
+	// 				prev.find('p').append($('<span>').text(v));
+	// 			});
+	//
+	// 			_nextSlideText = _nextSlideText.split(' ');
+	// 			next.find('p').empty();
+	// 			$.each(_nextSlideText, function(i, v) {
+	// 				next.find('p').append($('<span>').text(v));
+	// 			});
+	// 		};
+	// 		appendText();
+	//
+	// 		_slider.on('afterChange breakpoint', function(event, slick, currentSlide, nextSlide, breakpoint){
+	// 			appendText();
+	// 		});
+	// 	}
+	// };
+	// namedArrows.naming();
 
-			var appendText = function() {
-				var prev = _this.slider.find('.js-slider-prev');
-				var next = _this.slider.find('.js-slider-next');
-				var _currentSlide = _slider.find('.js-slider-item.slick-active');
-				var slides = _currentSlide.parent().find('.js-slider-item');
-				var slidesLength = slides.length;
-				var _prevSlide = _currentSlide.prev();
-				var _nextSlide = _currentSlide.next();
-
-				//if prev/next exist
-				var _prevSlideText = _prevSlide.length ? _prevSlide.find('h4').text() : $(slides[slidesLength - 1]).find('h4').text();
-				var _nextSlideText = _nextSlide.length ? _nextSlide.find('h4').text() : $(slides[0]).find('h4').text();
-
-				_prevSlideText = _prevSlideText.split(' ');
-				prev.find('p').empty();
-				$.each(_prevSlideText, function(i, v) {
-					prev.find('p').append($('<span>').text(v));
-				});
-
-				_nextSlideText = _nextSlideText.split(' ');
-				next.find('p').empty();
-				$.each(_nextSlideText, function(i, v) {
-					next.find('p').append($('<span>').text(v));
-				});
-			};
-			appendText();
-
-			_slider.on('afterChange breakpoint', function(event, slick, currentSlide, nextSlide, breakpoint){
-				appendText();
-			});
+	var newsArrows = {
+		titles: [],
+		init: function() {
+			this.cacheDom();
+			this.bindEvents();
+			this.render();
+		},
+		cacheDom: function() {
+			this.$el = $('.js-slider-arrow-names');
+			this.$slides = this.$el.find('.js-slider-item:not(.slick-cloned)');
+			this.$firstSlide = $(this.$slides[0]);
+			this.$lastSlide = $(this.$slides[this.$slides.length - 1]);
+		},
+		bindEvents: function() {
+			this.$el.on('afterChange breakpoint', this.render.bind(this));
+		},
+		render: function() {
+			this.getTitles();
+			this.$prev = this.$el.find('.js-slider-prev p');
+			this.$next = this.$el.find('.js-slider-next p');
+			this.$prev.html(this.titles[0]);
+			this.$next.html(this.titles[1]);
+		},
+		getTitles: function(event, slick, currentSlide, nextSlide, breakpoint) {
+			var $activeSlide = this.$el.find('.js-slider-item.slick-active');
+			var $prevSlide = $activeSlide.prev();
+			var $nextSlide = $activeSlide.next();
+			this.titles = [];
+			this.titles
+				.push(
+					($prevSlide.length ? $prevSlide : this.$lastSlide).find('h4').text(),
+					($nextSlide.length ? $nextSlide : this.$firstSlide).find('h4').text()
+				);
+			for(var i = 0; i < this.titles.length; i++) {
+				this.titles[i] = this.wrapWord.bind(this.titles[i]);
+			}
+		},
+		wrapWord: function() {
+			return '<span>' + this.replace(/ /g, '</span><span>') + '</span>';
 		}
 	};
-	namedArrows.naming();
+	newsArrows.init();
 
 	//select
 	var select = $('.js-select select');
