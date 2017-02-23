@@ -14,12 +14,18 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 134px;
+    height: 140px;
   }
 
   &__link {
     display: block;
     line-height: 0;
+		padding: 1px;
+		overflow: hidden;
+
+		svg {
+			overflow: visible;
+		}
   }
 
   &._nav {
@@ -47,11 +53,14 @@
 				display: inline-block;
 				vertical-align: top;
 
+				svg {
+					width: 40px;
+					height: 40px;
+				}
+
 				&._fb {
 
 					svg {
-						width: 17px;
-						height: 37px;
 
 						path {
 							fill: #fff;
@@ -62,10 +71,13 @@
 				&._ig {
 
 					svg {
-						width: 38px;
-						height: 38px;
 
-						path {
+						path,
+						circle {
+							stroke: #fff;
+						}
+
+						circle:nth-of-type(2) {
 							fill: #fff;
 						}
 					}
@@ -74,8 +86,6 @@
 				&._yt {
 
 					svg {
-						width: 42px;
-						height: 31px;
 
 						path {
 							fill: #fff;
