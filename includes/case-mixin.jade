@@ -1,3 +1,5 @@
+include share
+
 mixin case-mixin()
 	.case#case
 		.case__wrapper
@@ -47,10 +49,7 @@ mixin case-mixin()
 						li 60 минут авторского видеоконтента,
 						li Часовое постановочное шоу
 					p В рамках подготовки и реализации проекта командой V-events был создан фирменный стиль события, видеодекорации, разработан авторский сценарий, осуществлена режиссерско-постановочная работа, разработана логистика проекта и его комплексное управление.
-				.case__share Share
-					a(href="#")
-					a(href="#")
-					a(href="#")
+				+share()
 		#case-slider.case__slider.js-slider.js-grid-slider
 			each val, index in ["1", "2", "3"]
 				.case__slide.js-slider-item
