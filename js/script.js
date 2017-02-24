@@ -517,4 +517,58 @@ $(document).ready(function() {
 		}
 	};
 	hashPopup.init();
+
+	//share
+	var shareButtons = {
+		pUrl: location.href,
+		pTitle: document.title,
+		vk: {
+			url: 'http://vkontakte.ru/share.php?'
+		},
+		fb: {
+			url: 'https://www.facebook.com/sharer/sharer.php?s=100'
+		},
+		init: function() {
+			this.cacheDom();
+			this.bindEvents();
+		},
+		cacheDom: function() {
+			this.$el = $('.js-share');
+			this.$fb = this.$el.find('.js-share-fb');
+			this.$vk = this.$el.find('.js-share-vk');
+		},
+		bindEvents: function() {
+			this.$fb.on('click', this.getData.bind(this, 'fb'));
+			this.$vk.on('click', this.getData.bind(this, 'vk'));
+		},
+		getData: function(net, e) {
+			e.preventDefault();
+			switch(net) {
+				case 'fb':
+					url = this.fb.url;
+					url += '&p[title]=' + encodeURIComponent(this.pTitle);
+					url += '&p[summary]=' + encodeURIComponent('');
+					url += '&p[url]=' + encodeURIComponent(this.pUrl);
+					url += '&p[images][0]=' + encodeURIComponent('');
+					this.share(url);
+					break;
+				case 'vk':
+					url = this.vk.url;
+					url += 'url=' + encodeURIComponent(this.pUrl);
+					url += '&title=' + encodeURIComponent(this.pTitle);
+					url += '&description=' + encodeURIComponent('');
+					url += '&image=' + encodeURIComponent('');
+					url += '&noparse=false';
+					this.share(url);
+					break;
+				default:
+					return;
+				break;
+			}
+		},
+		share: function(url) {
+			window.open(url,'','toolbar=0,status=0');
+		}
+	};
+	shareButtons.init();
 });
