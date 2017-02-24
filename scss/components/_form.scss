@@ -67,7 +67,7 @@
 		margin-bottom: 12px;
 
 		&._checkbox {
-			margin-bottom: 55px;
+			margin: 55px 0;
 		}
 
 		.has-error {
@@ -146,11 +146,15 @@
 	}
 
 	&__text {
-		margin: 75px auto 55px;
+		margin: 25px auto 0;
 		max-width: 330px;
 		@include font-fpt-book();
 		font-size: 14px;
 		line-height: 18px;
+
+		&._xs {
+			display: none;
+		}
 	}
 
 	&__submit {
@@ -201,9 +205,16 @@
 			margin-bottom: 28px;
 		}
 
-		//&__text {
-		//	margin-top: 14px;
-		//}
+		&__control {
+
+			&._checkbox {
+				margin: 30px 0;
+			}
+		}
+
+		&__text {
+			margin-top: 15px;
+		}
 	}
 
 	@media (max-width: 999px) {
@@ -234,9 +245,18 @@
 		}
 
 		&__text {
+			margin-top: 166px;
 			max-width: 100%;
 			font-size: 20px;
 			line-height: 24px;
+
+			&._md {
+				display: none;
+			}
+
+			&._xs {
+				display: block;
+			}
 		}
 	}
 
@@ -253,6 +273,11 @@
 
 		.help-block {
 			display: none;
+		}
+
+		&__text {
+			margin-top: 133px;
+			font-size: 18px;
 		}
 	}
 }

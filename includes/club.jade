@@ -13,7 +13,7 @@ mixin club()
 		.form__close.js-form-close
 		.form__container
 			form(action='#', method='get').form__wrapper
-				.form__title The application form
+				.form__title The application form
 				.form__control
 					label(for='patronymic').form__label Patronymic
 					input(type='text', name='patronymic', id='patronymic').form__input
@@ -29,8 +29,9 @@ mixin club()
 				.form__control
 					label(for='e-mail').form__label E-mail
 					input(type='text', name='e-mail', id='e-mail').form__input
-				p.form__text After processing this data your personalized ID card will bedelivered to you by Business development director.
+				p.form__text._xs After processing this data your personalized ID card will bedelivered to you by Business development director.
 				.form__control._checkbox
 					input(type='checkbox', name='permit', id='permit').checkbox__input
 					label(for='permit').checkbox__label Я согласен на обработку моих личных данных
 				input(type='submit', name='submit', id='submit', value='send').btn.form__submit
+				p.form__text._md After processing this data your personalized ID card will bedelivered to you by Business development director.
