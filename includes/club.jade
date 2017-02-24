@@ -1,3 +1,5 @@
+include popup
+
 mixin club()
 	.club.js-blur#club
 		.club__left
@@ -36,3 +38,7 @@ mixin club()
 					label(for='permit').checkbox__label Я согласен на обработку моих личных данных
 				input(type='submit', name='submit', id='submit', value='send').btn.form__submit
 				p.form__text._md After processing this data your personalized ID card will bedelivered to you by Business development director.
+	+popup('success').form__success
+		h3 Ваш запрос отправлен <br>администратору!
+		p В течение 24 часов с Вами свяжутся для <br>уточнения информации.
+

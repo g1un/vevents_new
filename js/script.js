@@ -488,4 +488,33 @@ $(document).ready(function() {
 		}
 	};
 	formErrors.init();
+
+	//hashPopup
+	var hashPopup = {
+		hashValue: window.location.hash,
+		init: function() {
+			this.cacheDom();
+			this.bindEvents();
+		},
+		cacheDom: function() {
+			this.$html = $('html');
+			this.$blur = this.$html.find('.js-blur, .footer');
+			this.$el = this.$html.find(this.hashValue);
+			this.$close = this.$el.find('.js-popup-close');
+		},
+		bindEvents: function() {
+			if(this.$el.length > 0) {
+				this.$el.addClass('_show');
+				this.$html.addClass('_unscroll-md');
+				this.$blur.addClass('blur');
+				this.$close.on('click', this.closePopup.bind(this));
+			}
+		},
+		closePopup: function() {
+			this.$el.removeClass('_show');
+			this.$html.removeClass('_unscroll-md');
+			this.$blur.removeClass('blur');
+		}
+	};
+	hashPopup.init();
 });

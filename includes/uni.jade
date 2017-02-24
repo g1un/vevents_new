@@ -1,3 +1,5 @@
+include popup
+
 mixin uni()
 	.uni.js-blur#uni
 		.uni__container.clearfix
@@ -64,3 +66,6 @@ mixin uni()
 					input(type='checkbox', name='permit', id='permit').checkbox__input
 					label(for='permit').checkbox__label Я согласен на обработку моих личных данных
 				input(type='submit', name='submit', id='submit', value='send').btn.form__submit
+	+popup('success').form__success
+		h3 Ваш запрос отправлен <br>администратору!
+		p В течение 24 часов с Вами свяжутся для <br>уточнения информации.

@@ -1,0 +1,5 @@
+mixin popup(id)
+	.popup.js-popup(class!=attributes.class, id='#{id ? id : ""}')
+		.popup__close.js-popup-close
+		.popup__container
+			block
