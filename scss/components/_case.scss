@@ -8,18 +8,15 @@
 	&__wrapper {
 		width: 50%;
 		min-height: calc(100vh - 96px);
+		display: flex;
+		align-items: center;
 		background: #f4f4f4;
 	}
 
 	&__content {
 		width: 100%;
-		min-height: 100%;
 		padding: 145px 0;
 		box-sizing: border-box;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 		text-align: center;
 
 		h2 {
@@ -211,12 +208,12 @@
 		display: block;
 
 		&__wrapper {
+			display: block;
 			width: 100%;
 			min-height: 0;
 		}
 
 		&__content {
-			display: block;
 			padding: 80px 10px 60px;
 
 			h2 {

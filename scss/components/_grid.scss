@@ -6,6 +6,8 @@
 	display: flex;
 
 	&__left {
+		display: flex;
+		align-items: center;
 		width: 50%;
 		min-height: calc(100vh - 96px);
 		background: #f4f4f4;
@@ -132,6 +134,7 @@
 		display: block;
 
 		&__left {
+			display: block;
 
 			&._hidden-md {
 				display: none;
