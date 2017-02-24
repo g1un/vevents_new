@@ -450,4 +450,42 @@ $(document).ready(function() {
 			}
 		);
 	}
+
+	//formErrors
+	var formErrors = {
+		list: [],
+		init: function() {
+			this.cacheDom();
+			this.bindEvents();
+			this.render();
+		},
+		cacheDom: function() {
+			this.$el = $('.js-form form');
+			this.$errors = this.$el.find('.help-block-error');
+			this.$labels = this.$el.find('.js-form-label');
+			this.$message = this.$el.find('.js-form-errors');
+		},
+		bindEvents: function() {
+			this.$el.on('afterValidateAttribute beforeSubmit', this.getList.bind(this, e));
+		},
+		render: function() {
+			this.$message.empty();
+			for(var i = 0; i < this.list.length; i++) {
+				this.$message.append(this.list[i]);
+			}
+		},
+		getList: function(e) {
+			var _this = this;
+			setTimeout(function() {
+				_this.list = [];
+				for(var i = 0; i < _this.$errors.length; i++) {
+					if(_this.$errors[i].innerText != '') {
+						_this.list.push('<p class="help-block _sm">' + _this.$labels[i].innerText + ': ' + _this.$errors[i].innerText + '</p>');
+					}
+				}
+				_this.render();
+			}, 1);
+		}
+	};
+	formErrors.init();
 });
