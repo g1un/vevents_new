@@ -51,7 +51,7 @@
 	}
 
 	&__wrapper {
-		max-width: 360px;
+		width: 330px;
 		text-align: center;
 	}
 
@@ -64,16 +64,28 @@
 	}
 
 	&__control {
+		padding-top: 17px;
 		margin-bottom: 12px;
+		position: relative;
+
+		&._focused ,
+		&._has-value {
+
+			.form__label {
+				top: 0px;
+				transform: translateX(-50%) scale(1);
+			}
+		}
+
+		&._textarea {
+			margin-top: 22px;
+		}
 
 		&._checkbox {
 			margin: 55px 0;
 		}
 
-		.has-error {
-			display: inline-block;
-			vertical-align: top;
-			position: relative;
+		&.has-error {
 
 			.form {
 
@@ -90,7 +102,6 @@
 		top: 50%;
 		transform: translateY(-50%);
 		left: 100%;
-		margin-left: 35px;
 		@include font-fpt-book();
 		font-size: 14px;
 		line-height: 1.2em;
@@ -99,7 +110,6 @@
 		&._sm {
 			position: static;
 			transform: none;
-			margin-left: 0;
 			font-size: 18px;
 			line-height: 30px;
 		}
@@ -107,9 +117,15 @@
 
 	&__label {
 		display: block;
+		position: absolute;
+		top: 20px;
+		left: 50%;
+		transform: translateX(-50%) scale(1.4);
+		transition: all .25s;
 		@include font-fpt-book();
 		font-size: 14px;
 		line-height: 1.2em;
+		white-space: nowrap;
 	}
 
 	&__input,
@@ -140,7 +156,6 @@
 
 	&__textarea {
 		display: block;
-		margin: 10px auto 0;
 		border: 1px solid #c6c6c6;
 		min-height: 78px;
 		text-align: left;
@@ -161,7 +176,6 @@
 
 	&__text {
 		margin: 25px auto 0;
-		max-width: 330px;
 		@include font-fpt-book();
 		font-size: 14px;
 		line-height: 18px;
@@ -263,7 +277,6 @@
 		}
 
 		&__wrapper {
-			max-width: 420px;
 			padding-bottom: 20px;
 		}
 
@@ -282,7 +295,6 @@
 		&__text {
 			margin-top: 166px;
 			margin-bottom: 60px;
-			max-width: 100%;
 			font-size: 20px;
 			line-height: 24px;
 
@@ -299,6 +311,7 @@
 	@media (max-width: 767px) {
 
 		&__wrapper {
+			width: auto;
 			padding: 0 25px 20px;
 		}
 

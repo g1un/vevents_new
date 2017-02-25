@@ -16,21 +16,21 @@ mixin club()
 		.form__container
 			form(action='#', method='get').form__wrapper
 				.form__title The application form
-				.form__control
-					label(for='patronymic').form__label.js-form-label Patronymic
+				.form__control.js-form-text
 					input(type='text', name='patronymic', id='patronymic').form__input
-				.form__control
-					label(for='company').form__label.js-form-label Company
+					label(for='patronymic').form__label.js-form-label Patronymic
+				.form__control.js-form-text
 					input(type='text', name='company', id='company').form__input
-				.form__control
-					label(for='position').form__label.js-form-label Position
+					label(for='company').form__label.js-form-label Company
+				.form__control.js-form-text
 					input(type='text', name='position', id='position').form__input
-				.form__control
-					label(for='telephone').form__label.js-form-label Telephone
+					label(for='position').form__label.js-form-label Position
+				.form__control.js-form-text
 					input(type='tel', name='telephone', id='telephone').form__input
-				.form__control
-					label(for='e-mail').form__label.js-form-label E-mail
+					label(for='telephone').form__label.js-form-label Telephone
+				.form__control.js-form-text
 					input(type='text', name='e-mail', id='e-mail').form__input
+					label(for='e-mail').form__label.js-form-label E-mail
 				.form__errors.js-form-errors
 				p.form__text._xs After processing this data your personalized ID card will bedelivered to you by Business development director.
 				.form__control._checkbox

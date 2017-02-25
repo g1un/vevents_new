@@ -44,24 +44,24 @@ mixin uni()
 		.form__container
 			form(action='#', method='get').form__wrapper
 				.form__title The application form
-				.form__control
-					label(for='patronymic').form__label.js-form-label Patronymic
+				.form__control.js-form-text
 					input(type='text', name='patronymic', id='patronymic').form__input
-				.form__control
-					label(for='company').form__label.js-form-label Company
+					label(for='patronymic').form__label.js-form-label Patronymic
+				.form__control.js-form-text
 					input(type='text', name='company', id='company').form__input
-				.form__control
-					label(for='position').form__label.js-form-label Position
+					label(for='company').form__label.js-form-label Company
+				.form__control.js-form-text
 					input(type='text', name='position', id='position').form__input
-				.form__control
-					label(for='telephone').form__label.js-form-label Telephone
+					label(for='position').form__label.js-form-label Position
+				.form__control.js-form-text
 					input(type='tel', name='telephone', id='telephone').form__input
-				.form__control
-					label(for='e-mail').form__label.js-form-label E-mail
+					label(for='telephone').form__label.js-form-label Telephone
+				.form__control.js-form-text
 					input(type='text', name='e-mail', id='e-mail').form__input
-				.form__control
-					label(for='comment').form__label.js-form-label Комментарий
+					label(for='e-mail').form__label.js-form-label E-mail
+				.form__control._textarea.js-form-text
 					textarea(name='comment', id='comment').form__textarea
+					label(for='comment').form__label.js-form-label Комментарий
 				.form__control._checkbox
 					input(type='checkbox', name='permit', id='permit').checkbox__input
 					label(for='permit').checkbox__label Я согласен на обработку моих личных данных

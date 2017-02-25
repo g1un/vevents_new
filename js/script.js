@@ -571,4 +571,50 @@ $(document).ready(function() {
 		}
 	};
 	shareButtons.init();
+
+	//animated label
+	var textLabel = {
+		init: function() {
+			this.cacheDom();
+			this.bindEvents();
+			this.render();
+		},
+		cacheDom: function() {
+			this.$el = $('.js-form');
+			this.$inputs = this.$el.find('.js-form-text input, .js-form-text textarea');
+			this.$labels = this.$el.find('.js-form-text label');
+		},
+		bindEvents: function() {
+			this.$inputs.change(this.render.bind(this));
+			this.$labels.on('click', this.inputFocus.bind(this));
+			this.$inputs.focus(this.inputFocus.bind(this));
+			this.$inputs.blur(this.inputBlur.bind(this));
+		},
+		inputFocus: function(e) {
+			this.currentElements.$control(e).addClass('_focused');
+			var $input = this.currentElements.$input(e);
+			if(!$input.is(":focus")) $input.focus();
+		},
+		inputBlur: function(e) {
+			this.currentElements.$control(e).removeClass('_focused');
+		},
+		currentElements: {
+			$control: function(e) {
+				return $(e.target).closest('.js-form-text');
+			},
+			$input: function(e) {
+				return this.$control(e).find('input');
+			}
+		},
+		render: function() {
+			for(var i = 0; i < this.$inputs.length; i++) {
+				if(this.$inputs[i].value != '') {
+					$(this.$inputs[i]).closest('.js-form-text').addClass('_has-value');
+				} else {
+					$(this.$inputs[i]).closest('.js-form-text').removeClass('_has-value');
+				}
+			}
+		}
+	};
+	textLabel.init();
 });
