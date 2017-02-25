@@ -68,7 +68,9 @@
 		margin-bottom: 12px;
 		position: relative;
 
-		&._focused ,
+		&._focused,
+		&._focused._bold,
+		&._has-value._bold,
 		&._has-value {
 
 			.form__label {
@@ -79,6 +81,24 @@
 
 		&._textarea {
 			margin-top: 22px;
+		}
+
+		&._bold {
+			padding-top: 33px;
+
+			.form {
+
+				&__label {
+					top: 38px;
+					@include font-fpt-bold();
+					font-size: 23px;
+				}
+
+				&__textarea {
+					width: 310px;
+					min-height: 100px;
+				}
+			}
 		}
 
 		&._checkbox {
@@ -325,6 +345,22 @@
 
 			&._sm {
 				display: block;
+			}
+		}
+
+		&__control {
+
+			&._bold {
+				margin-left: -15px;
+				margin-right: -15px;
+
+				.form {
+
+					&__textarea {
+						width: 100%;
+						max-width: 100%;
+					}
+				}
 			}
 		}
 

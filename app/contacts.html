@@ -181,7 +181,7 @@
           </div>
           <div class="down"><a href="#" class="down__link js-scrollup">Scroll down</a></div>
         </header>
-        <div id="contacts" class="contacts">
+        <div id="contacts" class="contacts js-blur">
           <div class="contacts__container">
             <h2 class="contacts__title">Contacts</h2>
             <div class="contacts__tel">
@@ -193,6 +193,40 @@
               <li>Creative director: <a href="mailto:art@v-events.ru">art@v-events.ru</a></li>
               <li>Team work: <a href="mailto:hr@v-events.ru">hr@v-events.ru</a></li>
             </ul>
+            <div class="contacts__btn"><a href="#" class="btn js-form-open">fill out the brief</a></div>
+          </div>
+        </div>
+        <div id="letter" class="form js-form popup js-popup">
+          <div class="form__close js-form-close"></div>
+          <div class="form__container">
+            <form action="#" method="get" class="form__wrapper">
+              <div class="form__title">The Brief</div>
+              <div class="form__control js-form-text">
+                <input type="text" name="patronymic" id="patronymic" class="form__input">
+                <label for="patronymic" class="form__label js-form-label">Patronymic</label>
+              </div>
+              <div class="form__control js-form-text">
+                <input type="text" name="company" id="company" class="form__input">
+                <label for="company" class="form__label js-form-label">Company</label>
+              </div>
+              <div class="form__control js-form-text">
+                <input type="text" name="position" id="position" class="form__input">
+                <label for="position" class="form__label js-form-label">Position</label>
+              </div>
+              <div class="form__control js-form-text">
+                <input type="text" name="telephone" id="telephone" class="form__input">
+                <label for="telephone" class="form__label js-form-label">Telephone</label>
+              </div>
+              <div class="form__control js-form-text">
+                <input type="text" name="e-mail" id="e-mail" class="form__input">
+                <label for="e-mail" class="form__label js-form-label">E-mail</label>
+              </div>
+              <div class="form__control _textarea js-form-text _bold">
+                <textarea name="short_description" id="short_description" class="form__textarea"></textarea>
+                <label for="short_description" class="form__label js-form-label">Short Description</label>
+              </div>
+              <input type="submit" name="submit" id="submit" value="Send" class="btn form__submit">
+            </form>
           </div>
         </div>
         <footer id="footer" class="footer"><a href="#" class="footer__item">

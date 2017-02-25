@@ -64,9 +64,16 @@
 		}
 	}
 
+	&__btn {
+		margin-top: 70px;
+	}
+
 	@media (max-width: 767px) {
+		padding-top: 50px;
+		padding-bottom: 45px;
+		display: block;
 		margin-bottom: 0;
-		min-height: 432px;
+		height: auto;
 
 		&__tel {
 

@@ -1,5 +1,5 @@
 mixin contacts()
-	.contacts#contacts
+	.contacts#contacts(class=attributes.class)
 		.contacts__container
 			h2.contacts__title Contacts
 			.contacts__tel
@@ -11,3 +11,5 @@ mixin contacts()
 				li General director: #[a(href='mailto:general@v-events.ru') general@v-events.ru]
 				li Creative director: #[a(href='mailto:art@v-events.ru') art@v-events.ru]
 				li Team work: #[a(href='mailto:hr@v-events.ru') hr@v-events.ru]
+			.contacts__btn
+				a(href="#").btn.js-form-open fill out the brief

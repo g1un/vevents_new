@@ -9,7 +9,27 @@ html
 		include includes/frame
 		include includes/contacts
 		include includes/footer
+		include includes/form
+
+		-
+			var contactsForm = {
+			"title": "The Brief",
+			"textInputs": [
+				"Patronymic",
+				"Company",
+				"Position",
+				"Telephone",
+				"E-mail"
+			],
+			"textarea": {
+				"title": "Short Description",
+				"bold": true
+			},
+			"permit": false,
+			"button": "Send"
+			}
 
 		+frame(["contacts", "footer"])
-		+contacts()
+		+contacts().js-blur
+		+form(contactsForm).popup.js-popup#letter
 		+footer()

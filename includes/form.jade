@@ -1,0 +1,21 @@
+mixin form(form)
+	.form.js-form(class=attributes.class, id=attributes.id)
+		.form__close.js-form-close
+		.form__container
+			form(action='#', method='get').form__wrapper
+				.form__title!= form.title
+				each val in form.textInputs
+					-var _val = val.toLowerCase();
+					.form__control.js-form-text
+						input(type='text', name='#{_val}', id='#{_val}').form__input
+						label(for='#{_val}').form__label.js-form-label!= val
+				if form.textarea.title
+					-var _textarea = form.textarea.title.toLowerCase().replace(/ /g, '_');
+					.form__control._textarea.js-form-text(class='#{form.textarea.bold == true ? "_bold" : ""}')
+						textarea(name='#{_textarea}', id='#{_textarea}').form__textarea
+						label(for='#{_textarea}').form__label.js-form-label!= form.textarea.title
+				if form.permit
+					.form__control._checkbox
+						input(type='checkbox', name='permit', id='permit').checkbox__input
+						label(for='permit').checkbox__label Я согласен на обработку моих личных данных
+				input(type='submit', name='submit', id='submit', value='#{form.button}').btn.form__submit
