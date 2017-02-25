@@ -1,9 +1,9 @@
 mixin promo(id, slides)
 	.promo(class=attributes.class)
 		.promo__list.js-slider(id="#{id}")
-			each val in slides
+			each val, i in slides
 				.promo__item.js-slider-item
-					img(src="img/#{val.img}.png", alt="#{val.img}").promo__image
+					img.promo__image(class='_#{i+1}', src="img/#{val.img}.png", alt="#{val.img}")
 					.promo__inner
 						.promo__person!= val.person
 						.promo__slogan!= val.slogan

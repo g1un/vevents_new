@@ -9,7 +9,7 @@
 	&__item {
 		height: calc(100vh - 96px);
 		position: relative;
-		text-align: center;
+		text-align: right;
 
 		&>img {
 			display: inline-block;
@@ -17,10 +17,33 @@
 	}
 
 	&__image {
-		margin-left: 20%;
 		display: inline-block;
 		vertical-align: top;
 		height: 100%;
+
+		&._1 {
+			margin-right: 13%;
+		}
+
+		&._2 {
+			margin-right: 9%;
+		}
+
+		&._3 {
+			margin-right: 19%;
+		}
+
+		&._4 {
+			margin-right: 11%;
+		}
+
+		&._5 {
+			margin-right: 3%;
+		}
+
+		&._6 {
+			margin-right: 21%;
+		}
 	}
 
   &__inner {
@@ -120,22 +143,8 @@
 
 	@media (max-width: 1365px) {
 
-		&__item {
-			text-align: right;
-		}
-
-		&__image {
-			margin-left: 0;
-			margin-right: 6.5%;
-		}
-
 		&__person {
 			padding: 0;
-
-			//span {
-			//	padding: 0 18px;
-			//	line-height: 22px;
-			//}
 		}
 	}
 
@@ -146,11 +155,6 @@
 
 		&__item {
 			height: calc(100vh - 48px);
-			text-align: center;
-		}
-
-		&__image {
-			margin: 0;
 		}
 	}
 
