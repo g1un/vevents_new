@@ -10,7 +10,7 @@ mixin frame(pageNav)
 				.close.nav__close.js-close
 				ul.nav__list
 					each val in ["Company", "Portfolio", "V-events club", "V-events univercity", "Blog", "Contacts"]
-						li(class="nav__item#{val=='Portfolio' ? ' _menu' : ''}")
+						li(class="nav__item#{val=='Portfolio' ? ' _menu js-no-link' : ''}")
 							a(href="#").nav__link!= val
 							if val == 'Portfolio'
 								ul.nav__list

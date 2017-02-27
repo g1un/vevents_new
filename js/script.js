@@ -617,4 +617,11 @@ $(document).ready(function() {
 		}
 	};
 	textLabel.init();
+
+	// js-no-link
+	(function() {
+		$('.js-no-link>a').on('click', function(e) {
+			e.preventDefault();
+		});
+	})();
 });
