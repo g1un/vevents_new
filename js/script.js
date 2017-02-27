@@ -618,6 +618,9 @@ $(document).ready(function() {
 	};
 	textLabel.init();
 
+	//@todo
+	//make it more general
+
 	// js-no-link
 	(function() {
 		$('.js-no-link>a').on('click', function(e) {

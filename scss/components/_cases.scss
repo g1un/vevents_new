@@ -69,9 +69,21 @@
 			align-items: center;
 			padding: 0 100px;
 			box-sizing: border-box;
+			position: relative;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(to top, rgba(47,17,86,.99), rgba(47,17,86,.35));
+			}
 
 			h3 {
 				max-width: 100%;
+				position: relative;
 				@include font-fpt-medium();
 				font-size: 16px;
 				line-height: 1.2em;
@@ -84,6 +96,7 @@
 
 			h2 {
 				max-width: 100%;
+				position: relative;
 				@include font-rp-medium();
 				font-size: 66px;
 				line-height: 1.2em;
@@ -95,6 +108,7 @@
 			}
 
 			img {
+				position: relative;
 				display: block;
 				max-width: 100%;
 			}
@@ -137,7 +151,7 @@
 
 		p {
 			margin: 18px 0;
-			text-align: justify;
+			text-align: left;
 			max-width: 100%;
 		}
 
