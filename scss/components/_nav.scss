@@ -1,4 +1,4 @@
-.nav {
+ .nav {
 
   &__list {
 		height: 100%;
@@ -10,26 +10,14 @@
 	&__item {
 		height: 100%;
 
-		&:hover {
+		&:hover,
+		&.active {
 
 			.nav {
 
 				&__link {
 					background: #2fac66;
 					color: #fff;
-				}
-			}
-		}
-
-		&.active,
-		&.active:hover {
-
-			.nav {
-
-				&__link {
-					@include font-fpt-bold();
-					color: #000;
-					background: #f39200;
 				}
 			}
 		}
