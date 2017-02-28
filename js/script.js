@@ -593,6 +593,7 @@ $(document).ready(function() {
 		//cacheDom
 		var $el = $('[data-lazyload]');
 		var $slides = $el.find('.js-slider-item');
+		var $slideBgs = $el.find('[data-src]');
 		var $firstSlide = $($slides[1]);
 		var $lastSlide = $($slides[$slides.length - 2]);
 		var $firstClone = $($slides[0]);
@@ -601,9 +602,11 @@ $(document).ready(function() {
 		var $lastBg = $lastClone.find('[data-src]');
 		var clone = [false, false];
 		var $activeSlide, $activeBg, path;
+		var images = [];
+		var loadingImages = [];
+		var j = 0;
 
 		//bind events
-		// $el.on('reInit', load);
 		$el.on('afterChange', load);
 
 		load();
@@ -614,9 +617,13 @@ $(document).ready(function() {
 			$activeBg = $activeSlide.find('[data-src]');
 			path = $activeBg.attr('data-src');
 
-			$activeBg.hide();
-			$activeBg.css('background-image', 'url("' + path + '")');
-			$activeBg.imagesLoaded({background: true}, render);
+			if(!$activeSlide.hasClass('_loaded')) {
+				$activeBg.hide();
+				$activeBg.css('background-image', 'url("' + path + '")');
+				$activeBg.imagesLoaded({background: true}, render);
+			} else {
+				$activeSlide.removeClass('_loading');
+			}
 
 			refreshClone($activeSlide, path);
 		}
@@ -627,23 +634,91 @@ $(document).ready(function() {
 			$activeBg
 				.fadeIn()
 				.removeAttr('data-src');
+			var i = 0;
+			continueLoad(i);
+			// addOnload(i);
 		}
 
 		//refreshClone
 		function refreshClone($activeSlide, path) {
 			if(!clone[0] && $activeSlide.index('.js-slider-item') == 1) {
-				$lastBg
-					.css('background-image', 'url("' + path + '")')
-					.removeAttr('data-src');
-				clone[0] = true;
+				if(!$lastClone.hasClass('_loaded')) {
+					$lastBg
+						.css('background-image', 'url("' + path + '")')
+						.removeAttr('data-src');
+					clone[0] = true;
+				} else {
+					clone[0] = true;
+				}
 			}
 
 			if(!clone[1] && $activeSlide.index('.js-slider-item') == $slides.length - 2) {
-				$firstBg
-					.css('background-image', 'url("' + path + '")')
-					.removeAttr('data-src');
-				clone[1] = true;
+				if(!$firstClone.hasClass('_loaded')) {
+					$firstBg
+						.css('background-image', 'url("' + path + '")')
+						.removeAttr('data-src');
+					clone[1] = true;
+				} else {
+					clone[1] = true;
+				}
 			}
+		}
+
+		//continueLoad
+		function continueLoad(i) {
+			var limit = $slides.length;
+			if(i >= limit) return false;
+
+			if($($slides[i]).find('[data-src]').length) {
+				var img = new Image();
+				img.src = $($slideBgs[i]).attr('data-src');
+				images.push(img);
+
+				// loadingImages.push(i);
+
+				// console.log(images, i, loadingImages);
+				addOnload(i, img);
+			} else {
+				$($slides[i]).addClass('_loaded');
+				$($slides[i]).removeClass('_loading');
+
+				// console.log('else', i, loadingImages);
+				i++;
+				continueLoad(i);
+			}
+
+			// i++;
+			// continueLoad(i);
+			// console.log(i, loadingImages);
+		}
+
+		//add onload
+		function addOnload(i, img) {
+			// console.log(i);
+			// var limit = loadingImages.length;
+			// if(i >= limit) return false;
+
+			// images[loadingImages[i]].onload = loadImage(i);
+			img.onload = loadImage(i);
+
+			// i++;
+			// addOnload(i);
+		}
+
+		//loadImage
+		function loadImage(i) {
+			// var j = loadingImages[i];
+			// console.log('i=' + i + ', lI='+loadingImages[i]);
+			// loadingImages.shift();
+			if($($slides[i]).find('[data-src]').length) {
+				$($slideBgs[i]).css('background-image', 'url("' + $($slideBgs[i]).attr('data-src') + '")');
+				$($slideBgs[i]).removeAttr('data-src');
+			}
+			$($slides[j]).addClass('_loaded');
+			$($slides[j]).removeClass('_loading');
+
+			i++;
+			continueLoad(i);
 		}
 	})();
 
