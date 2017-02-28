@@ -320,7 +320,7 @@ $(document).ready(function() {
 				if($(window).scrollTop() + $(window).height() == $(document).height()) {
 					if(!_this.link.hasClass('_scrollup')) {
 						_this.link.addClass('_scrollup');
-						_this.link.text('Scroll Up');
+						_this.link.text('Back to top');
 						_this.link.on('click', function() {
 							$('html, body').animate(
 								{scrollTop: 0}, $(document).height() / 2
