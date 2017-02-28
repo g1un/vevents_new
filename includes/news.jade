@@ -3,7 +3,7 @@ include ../includes/btn-more
 
 mixin news(newsList)
 	.news#news(class=attributes.class)
-		+content-title('Industry News').news__title
+		+content-title('News').news__title
 		.news__list#news-slider.js-slider.js-slider-arrow-names
 			each val in newsList
 				.news__item.js-slider-item
