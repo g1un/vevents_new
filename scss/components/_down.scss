@@ -29,6 +29,8 @@
 			height: 8px;
 			width: 1px;
 			background: #000;
+			transform: translateY(0);
+			animation: arrow-before 1s infinite;
 		}
 
 		&:after {
@@ -40,21 +42,49 @@
 			height: 4px;
 			border-left: 1px solid #000;
 			border-bottom: 1px solid #000;
-			transform: rotate(-45deg);
+			transform: translateY(0) rotate(-45deg);
+			animation: arrow-after 1s infinite;
 		}
 
 		&._scrollup {
 			cursor: pointer;
 
+			&:before {
+				animation: none;
+			}
+
 			&:after {
 				top: auto;
 				bottom: 6px;
 				transform: rotate(135deg);
+				animation: none;
 			}
 		}
 	}
 
 	@media (max-width: 999px) {
 		display: none;
+	}
+}
+
+@keyframes arrow-before {
+
+	50% {
+		transform: translateY(2px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes arrow-after {
+
+	50% {
+		transform: translateY(2px) rotate(-45deg);
+	}
+
+	100% {
+		transform: translateY(0) rotate(-45deg);
 	}
 }
