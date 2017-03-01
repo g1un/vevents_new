@@ -9,10 +9,6 @@
 	background: rgba(0,0,0,.89);
 	overflow: auto;
 
-	&._show {
-		display: block;
-	}
-
 	&__close {
 		position: absolute;
 		top: -28px;

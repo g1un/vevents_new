@@ -636,14 +636,18 @@ $(document).ready(function() {
 		var $el = $html.find('.js-popup-simple');
 		var $close = $el.find('.js-close');
 
-		//unscroll
-		if($el.hasClass('_show')) $html.addClass('_unscroll-md');
+		//showPopup
+		if($(window).outerWidth() >= 768) {
+			$el.fadeIn();
+			$html.addClass('_unscroll-md')
+		}
 
 		//bindEvents
 		$close.on('click', hidePopup);
 
 		//hidePopup
 		function hidePopup() {
+			$el.fadeOut();
 			$html.removeClass('_unscroll-md');
 		}
 	})();
