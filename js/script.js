@@ -320,7 +320,7 @@ $(document).ready(function() {
 				if($(window).scrollTop() + $(window).height() == $(document).height()) {
 					if(!_this.link.hasClass('_scrollup')) {
 						_this.link.addClass('_scrollup');
-						_this.link.text('Back to top');
+						_this.link.html('<span></span>Back to top');
 						_this.link.on('click', function() {
 							$('html, body').animate(
 								{scrollTop: 0}, $(document).height() / 2
@@ -330,7 +330,7 @@ $(document).ready(function() {
 				} else {
 					if(_this.link.hasClass('_scrollup')) {
 						_this.link.removeClass('_scrollup');
-						_this.link.text('Scroll Down');
+						_this.link.html('<span></span>Scroll Down');
 						_this.link.off('click');
 						_this.link.on('click', function(e) {
 							e.preventDefault();
@@ -618,16 +618,6 @@ $(document).ready(function() {
 	};
 	textLabel.init();
 
-	//@todo
-	//make it more general
-
-	// js-no-link
-	(function() {
-		$('.js-no-link>a').on('click', function(e) {
-			e.preventDefault();
-		});
-	})();
-
 	//popup-simple
 	(function() {
 
@@ -637,7 +627,7 @@ $(document).ready(function() {
 		var $close = $el.find('.js-close');
 
 		//showPopup
-		if($(window).outerWidth() >= 768) {
+		if($el.hasClass('_show') && $(window).outerWidth() >= 768) {
 			$el.fadeIn();
 			$html.addClass('_unscroll-md')
 		}

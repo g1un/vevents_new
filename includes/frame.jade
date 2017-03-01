@@ -10,7 +10,7 @@ mixin frame(pageNav)
 				.close.nav__close.js-close
 				ul.nav__list
 					each val in ["Company", "Portfolio", "V-events club", "V-events univercity", "Blog", "Contacts"]
-						li(class="nav__item#{val=='Portfolio' ? ' _menu js-no-link' : ''}")
+						li(class="nav__item#{val=='Portfolio' ? ' _menu' : ''}")
 							a(href="#").nav__link!= val
 							if val == 'Portfolio'
 								ul.nav__list
@@ -45,4 +45,6 @@ mixin frame(pageNav)
 					li.page-nav__item
 						a(href="#", data-link="#{val}").page-nav__link
 		.down
-			a(href="#").down__link.js-scrollup Scroll down
+			a(href="#").down__link.js-scrollup
+				span
+				|Scroll down

@@ -20,44 +20,55 @@
 		position: relative;
 		cursor: default;
 
-		&:before {
-			content: '';
+		span {
 			position: absolute;
-			top: 50%;
-			left: 3px;
-			margin-top: -4px;
-			height: 8px;
-			width: 1px;
-			background: #000;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 11px;
+			display: block;
 			transform: translateY(0);
-			animation: arrow-before 1s infinite;
-		}
+			animation: arrow 1s infinite;
 
-		&:after {
-			content: '';
-			position: absolute;
-			top: 6px;
-			left: 1px;
-			width: 4px;
-			height: 4px;
-			border-left: 1px solid #000;
-			border-bottom: 1px solid #000;
-			transform: translateY(0) rotate(-45deg);
-			animation: arrow-after 1s infinite;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 3px;
+				margin-top: -4px;
+				height: 8px;
+				width: 1px;
+				background: #000;
+				transform: translateY(0);
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 6px;
+				left: 1px;
+				width: 4px;
+				height: 4px;
+				border-left: 1px solid #000;
+				border-bottom: 1px solid #000;
+				transform: translateY(0) rotate(-45deg);
+			}
 		}
 
 		&._scrollup {
 			cursor: pointer;
 
-			&:before {
-				animation: none;
-			}
+			span {
 
-			&:after {
-				top: auto;
-				bottom: 6px;
-				transform: rotate(135deg);
-				animation: none;
+				&:before {
+					transform: translateY(0);
+				}
+
+				&:after {
+					top: auto;
+					bottom: 6px;
+					transform: translateY(0) rotate(135deg);
+				}
 			}
 		}
 	}
@@ -67,7 +78,7 @@
 	}
 }
 
-@keyframes arrow-before {
+@keyframes arrow {
 
 	50% {
 		transform: translateY(2px);
@@ -75,16 +86,5 @@
 
 	100% {
 		transform: translateY(0);
-	}
-}
-
-@keyframes arrow-after {
-
-	50% {
-		transform: translateY(2px) rotate(-45deg);
-	}
-
-	100% {
-		transform: translateY(0) rotate(-45deg);
 	}
 }
