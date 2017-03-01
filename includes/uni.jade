@@ -1,4 +1,5 @@
 include popup
+include popup-simple
 
 mixin uni()
 	.uni.js-blur#uni
@@ -69,3 +70,7 @@ mixin uni()
 	+popup('success').form__success
 		h3 Ваш запрос отправлен <br>администратору!
 		p В течение 24 часов с Вами свяжутся для <br>уточнения информации.
+	+popup-simple()._show
+		.popup-simple__image
+			.popup-simple__close.js-close
+			img(src='img/rezfresh.jpg', alt='rezfresh')

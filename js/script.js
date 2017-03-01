@@ -627,4 +627,24 @@ $(document).ready(function() {
 			e.preventDefault();
 		});
 	})();
+
+	//popup-simple
+	(function() {
+
+		//cacheDom
+		var $html = $('html');
+		var $el = $html.find('.js-popup-simple');
+		var $close = $el.find('.js-close');
+
+		//unscroll
+		if($el.hasClass('_show')) $html.addClass('_unscroll-md');
+
+		//bindEvents
+		$close.on('click', hidePopup);
+
+		//hidePopup
+		function hidePopup() {
+			$html.removeClass('_unscroll-md');
+		}
+	})();
 });
