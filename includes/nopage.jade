@@ -1,11 +1,12 @@
 mixin nopage()
 	.nopage
 		.nopage__wrapper
-			a(href="#").logo.nopage__logo
-				.logo__image
-					img(src="img/svg/logo.svg")
-				.logo__title V-events
-				.logo__slogan Limited liability<br>company
-			h2.nopage__title Что-то пошло не так...
-			p.nopage__text Извините, старница не найдена. Возможно, ссылка устарела или была перемещена.
-			a(href='#').btn Вернуться на главную
+			.nopage__content
+				a(href="#").logo.nopage__logo
+					.logo__image
+						img(src="img/svg/logo.svg")
+					.logo__title V-events
+					.logo__slogan Limited liability <br>company
+				h2.nopage__title Что-то пошло не так...
+				p.nopage__text Извините, старница не найдена. Возможно, <br>ссылка устарела или была перемещена.
+				a(href='#').btn.nopage__btn Вернуться на главную
