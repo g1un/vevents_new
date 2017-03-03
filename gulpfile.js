@@ -77,11 +77,11 @@ gulp.task('clean:js', function() {
 	return del.sync('app/js');
 });
 
-// gulp.task('images', function(){
-// 	gulp.src('img/effects/**/*.+(png|jpg|gif|svg)')
-// 		.pipe(cache(imagemin()))
-// 		.pipe(gulp.dest('app/img/effects'))
-// });
+gulp.task('images', function(){
+	gulp.src('img/effects/**/*.+(png|jpg|gif|svg)')
+		.pipe(cache(imagemin()))
+		.pipe(gulp.dest('app/img/effects'))
+});
 
 gulp.task('watch', ['clean:js', 'browserSync', 'jade', 'sass', 'inline', 'scripts', 'svgmin'/*, 'images'*/], function(){
     gulp.watch('**/*.scss', ['sass']);

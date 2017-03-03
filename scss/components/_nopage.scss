@@ -1,0 +1,29 @@
+.nopage {
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100%;
+	min-height: 100%;
+
+	&__logo {
+		margin-bottom: 80px;
+	}
+
+	&__title {
+		margin-bottom: 15px;
+		@include font-fpt-bold();
+		font-size: 46px;
+		line-height: 1em;
+		color: #fff;
+		text-align: center;
+	}
+
+	&__text {
+		margin-bottom: 75px;
+		@include font-fpt-book();
+		font-size: 25px;
+		line-height: 1.2em;
+		color: #fff;
+	}
+}
