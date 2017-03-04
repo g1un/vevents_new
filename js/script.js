@@ -13,7 +13,7 @@ $(document).ready(function() {
 					nextArrow: '<button type="button" class="slider-nav _next"></button>',
 					dots: true,
 					responsive: [{
-						breakpoint: 601,
+						breakpoint: 768,
 						settings: {
 							arrows: false
 						}
@@ -26,10 +26,11 @@ $(document).ready(function() {
 					nextArrow: '<div class="slider-nav _next js-slider-next"><p></p></div>',
 					fade: true,
 					responsive: [{
-						breakpoint: 601,
+						breakpoint: 768,
 						settings: {
 							dots: true,
-							arrows: false
+							arrows: false,
+							adaptiveHeight: true
 						}
 					}]
 				}
@@ -39,7 +40,7 @@ $(document).ready(function() {
 					prevArrow: '<div class="slider-nav _prev js-slider-prev"><p></p></div>',
 					nextArrow: '<div class="slider-nav _next js-slider-next"><p></p></div>',
 					responsive: [{
-						breakpoint: 601,
+						breakpoint: 768,
 						settings: {
 							dots: true,
 							arrows: false

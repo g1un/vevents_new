@@ -234,7 +234,11 @@
 		}
 
 		.slick-dots {
-			bottom: 70px;
+			position: static;
+			left: auto;
+			right: auto;
+			padding-top: 21px;
+			padding-bottom: 21px;
 
 			li {
 				margin-right: 4px;
