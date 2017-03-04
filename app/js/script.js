@@ -602,9 +602,7 @@ $(document).ready(function() {
 		var $lastBg = $lastClone.find('[data-src]');
 		var clone = [false, false];
 		var $activeSlide, $activeBg, path;
-		// var images = [];
-		// var loadingImages = [];
-		var j = 0;
+		var timer = [];
 
 		//bind events
 		$el.on('afterChange', load);
@@ -614,57 +612,55 @@ $(document).ready(function() {
 		//load
 		function load() {
 			$activeSlide = $el.find('.slick-active');
+			if(!$activeSlide.find('[data-src]').length) return false;
+			$activeSlide
+				.removeClass('_preloading')
+				.addClass('_loading');
 			$activeBg = $activeSlide.find('[data-src]');
 			path = $activeBg.attr('data-src');
 
-			if(!$activeSlide.hasClass('_loaded')) {
-				$activeBg.hide();
-				$activeBg
-					.removeAttr('data-src')
-					.css('background-image', 'url("' + path + '")');
-				var img = new Image();
-				img.src = path;
-				img.onload = function() { render($activeSlide, $activeBg) }.bind(this);
-				// $activeBg.imagesLoaded({background: true}, render($activeSlide, $activeBg));
-			} else {
-				$activeSlide.removeClass('_loading');
-			}
-
-			refreshClone($activeSlide, path);
+			$activeBg.hide();
+			var img = new Image();
+			img.src = path;
+			img.onload = function() { render($activeSlide, path) }.bind(this);
 		}
 
 		//render
-		function render(slide, bg) {
-			console.log('loaded: ' + slide.index('.js-slider-item'));
-			slide.removeClass('_loading');
-			bg.fadeIn();
+		function render(slide, path) {
+			slide
+				.removeClass('_loading')
+				.addClass('_loaded');
+			slide.find('.case__slide-image')
+				.removeAttr('data-src')
+				.css('background-image', 'url("' + path + '")')
+				.fadeIn();
+
+			refreshClone(slide, path);
 
 			var i = 0;
-			// continueLoad(i);
+			continueLoad(i);
 		}
 
 		//refreshClone
 		function refreshClone($activeSlide, path) {
 			if(!clone[0] && $activeSlide.index('.js-slider-item') == 1) {
-				if(!$lastClone.hasClass('_loaded')) {
-					$lastBg
-						.css('background-image', 'url("' + path + '")')
-						.removeAttr('data-src');
-					clone[0] = true;
-				} else {
-					clone[0] = true;
-				}
+				$lastBg
+					.css('background-image', 'url("' + path + '")')
+					.removeAttr('data-src');
+				$lastClone
+					.removeClass('_preloading')
+					.addClass('_loaded');
+				clone[0] = true;
 			}
 
 			if(!clone[1] && $activeSlide.index('.js-slider-item') == $slides.length - 2) {
-				if(!$firstClone.hasClass('_loaded')) {
-					$firstBg
-						.css('background-image', 'url("' + path + '")')
-						.removeAttr('data-src');
-					clone[1] = true;
-				} else {
-					clone[1] = true;
-				}
+				$firstBg
+					.css('background-image', 'url("' + path + '")')
+					.removeAttr('data-src');
+				$firstClone
+					.removeClass('_preloading')
+					.addClass('_loaded');
+				clone[1] = true;
 			}
 		}
 
@@ -674,27 +670,47 @@ $(document).ready(function() {
 			if(i >= limit) return false;
 
 			if($($slides[i]).find('[data-src]').length) {
+				$($slides[i])
+					.addClass('_loading')
+					.removeClass('_preloading');
+
 				var img = new Image();
 				img.src = $($slideBgs[i]).attr('data-src');
+
 				$($slideBgs[i]).removeAttr('data-src');
 
-				img.onload = function() { loadImage(i, img.src) };
-			} else {
-				$($slides[i]).addClass('_loaded');
-				$($slides[i]).removeClass('_loading');
+				img.onload = function() { loadImage(i, img.src) }.bind(this);
 
+				timer[i] = setTimeout(function() {
+					reportError(i);
+					goOn(i);
+				}, 5000);
+			} else {
 				i++;
 				continueLoad(i);
 			}
 		}
 
+		//goOn
+		function goOn(i) {
+			i++;
+			continueLoad(i);
+		}
+
+		//reportError
+		function reportError(i) {
+			$($slides[i]).addClass('_error');
+		}
+
+
 		//loadImage
 		function loadImage(i, src) {
-			if(!$($slides[i]).hasClass('_loaded')) {
-				$($slideBgs[i]).css('background-image', 'url("' + src + '")');
-			}
-			$($slides[j]).addClass('_loaded');
-			$($slides[j]).removeClass('_loading');
+			clearTimeout(timer[i]);
+
+			$($slideBgs[i]).css('background-image', 'url("' + src + '")');
+			$($slides[i])
+				.addClass('_loaded')
+				.removeClass('_loading');
 			$($slideBgs[i]).show();
 
 			i++;
