@@ -33,18 +33,18 @@ mixin frame(pageNav)
 					a(href="#").lang__item._ru._show Russian
 					a(href="#").lang__item._en Английский
 			.sandwich.header__sandwich(data-open-btn="nav")
-		.social
-			ul.social__list
-				each val in ["fb", "ig", "yt"]
-					li.social__item
-						a(href="#").social__link
-							img(src="img/svg/#{val}.svg")
-		.page-nav.js-aside-nav
-			ul.page-nav__list
-				each val in pageNav
-					li.page-nav__item
-						a(href="#", data-link="#{val}").page-nav__link
-		.down
-			a(href="#").down__link.js-scrollup
-				span
-				|Scroll down
+	.social
+		ul.social__list
+			each val in ["fb", "ig", "yt"]
+				li.social__item
+					a(href="#").social__link
+						img(src="img/svg/#{val}.svg")
+	.page-nav.js-aside-nav
+		ul.page-nav__list
+			each val in pageNav
+				li.page-nav__item
+					a(href="#", data-link="#{val}").page-nav__link
+	.down
+		a(href="#").down__link.js-scrollup
+			span
+			|Scroll down

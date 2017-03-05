@@ -3,11 +3,30 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
+	z-index: 1;
 	height: 48px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: #fff;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		height: 200%;
+		width: 48px;
+		background: #fff;
+	}
+
+	&:before {
+		left: 0;
+	}
+
+	&:after {
+		right: 0;
+	}
 
 	&__link {
 		display: block;
