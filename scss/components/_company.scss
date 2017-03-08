@@ -122,12 +122,31 @@
 	}
 
 	&__signature {
+		margin-top: 27px;
 		clear: both;
 		float: right;
 		width: 400px;
-		@include font-gp-pro-it();
-		font-size: 15px;
+		@include font-gp-pro();
+		font-size: 16px;
 		line-height: 1.2em;
+
+		&-left {
+			padding-top: 3px;
+			float: left;
+		}
+
+		span {
+			margin-top: 5px;
+			display: block;
+			@include font-gp-pro-it();
+		}
+
+		svg {
+			display: block;
+			float: left;
+			margin-left: 20px;
+			width: 160px;
+		}
 	}
 
 	@media (max-width: 1919px) {
@@ -401,6 +420,12 @@
 
 		&__signature {
 			font-size: 20px;
+
+			svg {
+				margin-left: 5px;
+				margin-top: 5px;
+				width: 120px;
+			}
 		}
 	}
 }
