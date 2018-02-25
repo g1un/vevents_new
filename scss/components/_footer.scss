@@ -11,6 +11,27 @@
 		overflow: hidden;
 		position: relative;
 
+		&:before,
+		&:after {
+			opacity: 0;
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 24px;
+			bottom: 24px;
+			width: 6px;
+			background: linear-gradient(to bottom, #67912e, #f39200);
+			transition: opacity .5s;
+		}
+
+		&:before {
+			left: 20px;
+		}
+
+		&:after {
+			right: 20px;
+		}
+
 		&-bg {
 			position: absolute;
 			top: 0;
@@ -24,6 +45,11 @@
 		}
 
 		&:hover {
+
+			&:before,
+			&:after {
+				opacity: 1;
+			}
 
 			.footer {
 
@@ -67,17 +93,34 @@
 			text-align: center;
 			transition: background .5s;
 
-			&:before {
+			&:before,
+			&:after {
 				opacity: 0;
 				content: '';
 				position: absolute;
-				top: 20px;
-				left: 20px;
-				right: 20px;
-				bottom: 20px;
-				border: 2px solid #fff;
-				transition: opacity .5s;
+				left: 24px;
+				right: 24px;
+				height: 6px;
+                transition: opacity .5s;
 			}
+
+			&:before {
+				top: 24px;
+				background: #67912e;
+			}
+
+			&:after {
+				bottom: 24px;
+				background: #f39200;
+			}
+
+            &:hover {
+
+                &:before,
+                &:after {
+                    opacity: 1;
+                }
+            }
 
 			span {
 				opacity: 0;

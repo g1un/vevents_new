@@ -20,14 +20,23 @@
 		text-align: center;
 
 		h2 {
+            margin-bottom: 60px;
+            padding: 0 10px;
 			@include font-rp-medium();
 			font-size: 66px;
 			line-height: 1.2em;
 			font-weight: 400;
 			text-align: center;
 			text-transform: uppercase;
-			margin-bottom: 20px;
-			padding: 0 10px;
+
+            &:after {
+                content: '';
+                display: block;
+                margin: 20px auto 0;
+                width: 201px;
+                height: 8px;
+                background: linear-gradient(to left, #67912e, #f39200);
+            }
 		}
 	}
 
@@ -57,11 +66,6 @@
 		&:hover {
 			text-decoration: underline;
 		}
-	}
-
-	&__ornament {
-		line-height: 0;
-		margin-bottom: 80px;
 	}
 
 	&__text {
@@ -179,10 +183,6 @@
 		&__text {
 			max-width: 460px;
 		}
-
-		&__ornament {
-			margin-bottom: 25px;
-		}
 	}
 
 	@media only screen and (max-width: 1365px) {
@@ -197,10 +197,6 @@
 
 		&__text {
 			max-width: 335px;
-		}
-
-		&__ornament {
-			margin-bottom: 40px;
 		}
 	}
 

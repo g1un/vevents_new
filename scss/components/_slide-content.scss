@@ -30,6 +30,22 @@
 		text-transform: uppercase;
 		margin-bottom: 20px;
 		position: relative;
+
+		&:after {
+			content: '';
+			display: block;
+			margin: 20px auto 0;
+			width: 201px;
+			height: 8px;
+			background: linear-gradient(to left, #67912e, #f39200);
+		}
+
+        @media only screen and (max-width: 767px) {
+
+            .after {
+                display: none;
+            }
+        }
 	}
 
 	img {

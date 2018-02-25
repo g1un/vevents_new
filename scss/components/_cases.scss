@@ -104,13 +104,15 @@
 				font-weight: 400;
 				text-align: center;
 				text-transform: uppercase;
-				margin-bottom: 20px;
-			}
 
-			img {
-				position: relative;
-				display: block;
-				max-width: 100%;
+				&:after {
+                    content: '';
+                    display: block;
+                    margin: 20px auto 0;
+                    width: 201px;
+                    height: 8px;
+                    background: linear-gradient(to left, #67912e, #f39200);
+                }
 			}
 		}
 	}
@@ -394,10 +396,10 @@
 
 				h2 {
 					font-size: 37px;
-				}
 
-				img {
-					display: none;
+                    &:after {
+                        display: none;
+                    }
 				}
 			}
 		}

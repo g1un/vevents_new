@@ -5,9 +5,6 @@ mixin promo(id, slides)
 				.promo__item.js-slider-item
 					img.promo__image(class='_#{i+1}', src="img/#{val.img}.png", alt="#{val.img}")
 					.promo__inner
-						.promo__person!= val.person
-						.promo__slogan!= val.slogan
-						.promo__ornament
-							img(src="img/ornament.png", alt="ornament")
-
-
+						.promo__wrapper
+							.promo__person!= val.person
+							.promo__slogan!= val.slogan
