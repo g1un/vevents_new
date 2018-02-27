@@ -6,21 +6,6 @@
     background: rgba(245,245,245,.4) linear-gradient(-23deg, rgba(0,0,0,.2), rgba(255,255,255,.2));
     position: relative;
 
-    &:before {
-        content: '';
-        position: absolute;
-        bottom: 24%;
-        right: 16%;
-        z-index: 1;
-        width: 0;
-        height: 0;
-        border-right: 116px solid #f8ea1b;
-        border-bottom: 116px solid #f8ea1b;
-        border-left: 116px solid transparent;
-        border-top: 116px solid transparent;
-        filter: blur(9px);
-    }
-
     &__item {
         height: calc(100vh - 96px);
         position: relative;
