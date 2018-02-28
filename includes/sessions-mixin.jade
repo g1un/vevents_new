@@ -1,0 +1,19 @@
+include share
+
+mixin sessions-mixin()
+    .case#sessions-page
+        .case__wrapper
+            .article
+                h2.txt-title-1 V-events university. First session.
+                p.txt-text-1
+                    |The first educational V-events university module gathered 25 participants from all over Russia. Leading specialists in the event industry and direction from Krasnoyarsk, Rostov-on-Don, Nizhny Novgorod, Saint Petersburg and Moscow became students of the corporate university. The first day was devoted to theoretical aspects of the production activities, the material analysis, different phases of work on projects, the particularity of direction in the event industry, examination of practical cases and analysis of methods and tools that have been used.
+                p.txt-text-1
+                    |During the second day, the participants performed the functions of inspectors of the leading multi-format venues in St. Petersburg: "Leningrad Center" show space, Naryshkin Mansion, the Four Seasons Hotel and the concert and sports complex "Sibur arena". A detailed inspection of the backstage space and the control panels as well as communication with representatives of the sites allowed the professionals to understand current trends in the event directing and to master and systematize basic knowledge of the theory of directing.
+                p.txt-text-1
+                    |In the spring of 2018 V-events university will begin new student enrollment.
+        .case__slider.js-slider.js-grid-slider#sessions-slider
+            each val, index in ["1", "2", "3"]
+                .case__slide.js-slider-item
+                    .slide-content.case__slide-image._no-gradient(style="background-image: url(img/news-page-slide-1" +
+                    ".jpg)")
+

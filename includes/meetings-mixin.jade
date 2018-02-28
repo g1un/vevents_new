@@ -1,0 +1,32 @@
+include share
+
+mixin meetings-mixin()
+    .articles#meetings-page
+        .case._static._articles.articles__item
+            .case__wrapper.articles__left
+                .article
+                    p.txt-text-1.article__date November, 27. 2017
+                    h2.txt-title-1 V- events club. The first meeting.
+                    p.txt-text-1
+                        |Art-cluster "Symposium" hosted the first meeting for the participants of the V-events private club. Communication on the topic "Structural organization and stages in preparation of an event project" between the agency’s representatives and its clients allowed the client community to understand the inner working mechanisms of the agency during a project realization as well as the importance of collaboration and deadlines at each stage.
+                    p.txt-text-1
+                        |Free communication, exchange of experience and the atmosphere of co-creation became the foundation for the success of the format.
+            .case__slider.articles__right.js-slider.js-slider-meetings
+                each val, index in ["1", "2", "3"]
+                    .case__slide.js-slider-item
+                        .slide-content.case__slide-image._no-gradient(style="background-image: url(img/news-page-slide-1" +
+                        ".jpg)")
+        .case._static._articles.articles__item
+            .case__wrapper.articles__left
+                .article
+                    p.txt-text-1.article__date November, 27. 2017
+                    h2.txt-title-1 V- events club. The first meeting.
+                    p.txt-text-1
+                        |Art-cluster "Symposium" hosted the first meeting for the participants of the V-events private club. Communication on the topic "Structural organization and stages in preparation of an event project" between the agency’s representatives and its clients allowed the client community to understand the inner working mechanisms of the agency during a project realization as well as the importance of collaboration and deadlines at each stage.
+                    p.txt-text-1
+                        |Free communication, exchange of experience and the atmosphere of co-creation became the foundation for the success of the format.
+            .case__slider.articles__right.js-slider.js-slider-meetings
+                each val, index in ["1", "2", "3"]
+                    .case__slide.js-slider-item
+                        .slide-content.case__slide-image._no-gradient(style="background-image: url(img/news-page-slide-1" +
+                        ".jpg)")

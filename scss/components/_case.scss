@@ -117,6 +117,10 @@
 		bottom: 48px;
 		right: 48px;
 
+		&._sessions {
+            top: 188px;
+		}
+
 		@media (min-width: 1000px) {
 
 			&._down {
@@ -156,6 +160,44 @@
 			}
 		}
 	}
+
+    &._static {
+
+        .case {
+
+            &__slider {
+                width: 50%;
+                position: relative;
+                top: auto;
+                bottom: auto;
+                right: auto;
+
+                @media only screen and (max-width: 999px) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .slick-dots {
+
+            @media only screen and (max-width: 767px) {
+                bottom: 30px;
+            }
+        }
+    }
+
+    &._articles {
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+        &:last-child {
+            margin-bottom: 48px;
+
+            @media only screen and (max-width: 767px) {
+                margin-bottom: 35px;
+            }
+        }
+    }
 
 	&__slide {
 		height: 100%;

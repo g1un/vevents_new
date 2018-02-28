@@ -1,0 +1,16 @@
+.articles {
+
+    &__item {
+
+        &:nth-child(even) {
+
+            .articles__left {
+                order: 1;
+
+                @media only screen and (max-width: 999px) {
+                    order: 0;
+                }
+            }
+        }
+    }
+}

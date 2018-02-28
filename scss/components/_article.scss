@@ -1,0 +1,37 @@
+.article {
+    width: 100%;
+    padding: 145px 10px;
+    box-sizing: border-box;
+    max-width: 510px;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 1919px) {
+        padding: 60px 0;
+        max-width: 460px;
+    }
+
+    @media only screen and (max-width: 1365px) {
+        padding: 110px 0;
+        max-width: 335px;
+    }
+
+    @media only screen and (max-width: 999px) {
+        padding: 80px 10px 60px;
+        max-width: 545px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding: 60px 30px 50px;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    p {
+
+        &:not(:last-child) {
+            margin-bottom: 18px;
+        }
+    }
+}

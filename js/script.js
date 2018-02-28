@@ -59,6 +59,13 @@ $(document).ready(function() {
 	slider.run('#case-slider', 'case');
 	slider.run('#cases-slider', 'case');
 	slider.run('#news-page-slider', 'case');
+	slider.run('#sessions-slider', 'case');
+
+	var sliderMeetings = document.querySelectorAll('.js-slider-meetings');
+	[].forEach.call(sliderMeetings, function(meeting, i) {
+	    meeting.id = 'slider-meeting-' + i;
+        slider.run('#' + meeting.id, 'case');
+    });
 
 	//slider arrows with names
 	// var namedArrows = {

@@ -9,12 +9,22 @@ mixin frame(pageNav)
 			nav.nav.header__nav.js-close-object(data-html-unscroll="true")
 				.close.nav__close.js-close
 				ul.nav__list
-					each val in ["Company", "Portfolio", "V-events club", "V-events univercity", "Blog", "Contacts"]
-						li(class="nav__item#{val=='Portfolio' ? ' _menu' : ''}")
+					each val in ["Company", "Portfolio", "V-events club", "V-events university", "Blog", "Contacts"]
+						li(class="nav__item#{val=='Portfolio' || val=='V-events university' || val=='V-events club' ? ' _menu' : ''}")
 							a(href="#").nav__link!= val
 							if val == 'Portfolio'
 								ul.nav__list
 									each val in ["Corporate events", "Special events", "Trade events"]
+										li.nav__item
+											a(href="#", title='#{val}').nav__link!= val
+							if val == 'V-events university'
+								ul.nav__list
+									each val in ["About", "Sessions"]
+										li.nav__item
+											a(href="#", title='#{val}').nav__link!= val
+							if val == 'V-events club'
+								ul.nav__list
+									each val in ["Meetings", "Get a card"]
 										li.nav__item
 											a(href="#", title='#{val}').nav__link!= val
 				.lang._nav.nav__lang

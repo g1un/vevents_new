@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title «V-events - University Sessions»
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel='stylesheet', type='text/css', href='css/style.css')
+    body
+        include includes/frame
+        include includes/meetings-mixin
+        include includes/footer
+
+        +frame(["meetings-page", "footer"])
+        +meetings-mixin()
+        +footer()

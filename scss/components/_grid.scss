@@ -97,6 +97,13 @@
 				bottom: 0;
 				background: linear-gradient(to top, rgba(47,17,86,.99), rgba(47,17,86,.35));
 			}
+
+            &._no-gradient {
+
+                &:before {
+                    display: none;
+                }
+            }
 		}
 	}
 
